@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using NetCoreOnionArchTemplate.Application.Abstractions;
-using NetCoreOnionArchTemplate.Persistence.Concretes;
+using NetCoreOnionArchTemplate.Application.Repositories;
 using NetCoreOnionArchTemplate.Persistence.Context;
+using NetCoreOnionArchTemplate.Persistence.Repositories;
 
 namespace NetCoreOnionArchTemplate.Persistence
 {
@@ -11,8 +11,13 @@ namespace NetCoreOnionArchTemplate.Persistence
         //Connection String: https://www.connectionstrings.com/
         public static void AddPersistanceServices(this IServiceCollection services)
         {
-            services.AddSingleton<IProductService, ProductService>();
             services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.ConnectionString));
+            services.AddScoped<ICustomerReadRepository, CustomerReadRepository>();
+            services.AddScoped<ICustomerWriteRepository, CustomerWriteRepository>();
+            services.AddScoped<IOrderReadRepository, OrderReadRepository>();
+            services.AddScoped<IOrderWriteRepository, OrderWriteRepository>();
+            services.AddScoped<IProductReadRepository, ProductReadRepository>();
+            services.AddScoped<IProductWriteRepository, ProductWriteRepository>();
         }
     }
 }
