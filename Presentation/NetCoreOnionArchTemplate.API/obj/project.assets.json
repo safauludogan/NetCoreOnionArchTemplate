@@ -107,6 +107,55 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "NetCoreOnionArchTemplate.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "NetCoreOnionArchTemplate.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Application.dll": {}
+        }
+      },
+      "NetCoreOnionArchTemplate.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Domain.dll": {}
+        }
+      },
+      "NetCoreOnionArchTemplate.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "NetCoreOnionArchTemplate.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Infrastructure.dll": {}
+        }
+      },
+      "NetCoreOnionArchTemplate.Persistence/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "NetCoreOnionArchTemplate.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Persistence.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Persistence.dll": {}
+        }
       }
     }
   },
@@ -460,11 +509,34 @@
         "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "NetCoreOnionArchTemplate.Application/1.0.0": {
+      "type": "project",
+      "path": "../../Core/NetCoreOnionArchTemplate.Application/NetCoreOnionArchTemplate.Application.csproj",
+      "msbuildProject": "../../Core/NetCoreOnionArchTemplate.Application/NetCoreOnionArchTemplate.Application.csproj"
+    },
+    "NetCoreOnionArchTemplate.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../Core/NetCoreOnionArchTemplate.Domain/NetCoreOnionArchTemplate.Domain.csproj",
+      "msbuildProject": "../../Core/NetCoreOnionArchTemplate.Domain/NetCoreOnionArchTemplate.Domain.csproj"
+    },
+    "NetCoreOnionArchTemplate.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../../Infrastructure/NetCoreOnionArchTemplate.Infrastructure/NetCoreOnionArchTemplate.Infrastructure.csproj",
+      "msbuildProject": "../../Infrastructure/NetCoreOnionArchTemplate.Infrastructure/NetCoreOnionArchTemplate.Infrastructure.csproj"
+    },
+    "NetCoreOnionArchTemplate.Persistence/1.0.0": {
+      "type": "project",
+      "path": "../../Infrastructure/NetCoreOnionArchTemplate.Persistence/NetCoreOnionArchTemplate.Persistence.csproj",
+      "msbuildProject": "../../Infrastructure/NetCoreOnionArchTemplate.Persistence/NetCoreOnionArchTemplate.Persistence.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.AspNetCore.OpenApi >= 7.0.13",
+      "NetCoreOnionArchTemplate.Application >= 1.0.0",
+      "NetCoreOnionArchTemplate.Infrastructure >= 1.0.0",
+      "NetCoreOnionArchTemplate.Persistence >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -499,7 +571,17 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
+              "projectPath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
+            },
+            "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj"
+            },
+            "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj": {
+              "projectPath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

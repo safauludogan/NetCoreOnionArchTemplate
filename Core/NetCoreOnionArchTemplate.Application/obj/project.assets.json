@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "NetCoreOnionArchTemplate.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "NetCoreOnionArchTemplate.Domain/1.0.0": {
+      "type": "project",
+      "path": "../NetCoreOnionArchTemplate.Domain/NetCoreOnionArchTemplate.Domain.csproj",
+      "msbuildProject": "../NetCoreOnionArchTemplate.Domain/NetCoreOnionArchTemplate.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "NetCoreOnionArchTemplate.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\asus\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj": {
+              "projectPath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

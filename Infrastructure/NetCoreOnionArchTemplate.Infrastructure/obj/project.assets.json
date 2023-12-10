@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "NetCoreOnionArchTemplate.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "NetCoreOnionArchTemplate.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Application.dll": {}
+        }
+      },
+      "NetCoreOnionArchTemplate.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "NetCoreOnionArchTemplate.Application/1.0.0": {
+      "type": "project",
+      "path": "../../Core/NetCoreOnionArchTemplate.Application/NetCoreOnionArchTemplate.Application.csproj",
+      "msbuildProject": "../../Core/NetCoreOnionArchTemplate.Application/NetCoreOnionArchTemplate.Application.csproj"
+    },
+    "NetCoreOnionArchTemplate.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../Core/NetCoreOnionArchTemplate.Domain/NetCoreOnionArchTemplate.Domain.csproj",
+      "msbuildProject": "../../Core/NetCoreOnionArchTemplate.Domain/NetCoreOnionArchTemplate.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "NetCoreOnionArchTemplate.Application >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\asus\\.nuget\\packages\\": {},
@@ -38,7 +75,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
+              "projectPath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
