@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "B/6tLrM10M/tOTlPkiuFERxLfDLF/bW1f6Wep5krPdE=",
+  "Source": "NetCoreOnionArchTemplate.API",
+  "BasePath": "_content/NetCoreOnionArchTemplate.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
