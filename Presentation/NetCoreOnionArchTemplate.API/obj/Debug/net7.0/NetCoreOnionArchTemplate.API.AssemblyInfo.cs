@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NetCoreOnionArchTemplate.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c709e353518102c85c956ad3d4bb0e31b295ad1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("NetCoreOnionArchTemplate.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NetCoreOnionArchTemplate.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kPuUTXZR4kHlouxkxYQJLQHsUrfrAm4LlG9llqp7LbTOxOg9/NYQc2gv3f+X+Psm4X+vTU00PuOHMKyvS3fWWQ==",
+  "dgSpecHash": "7gr4THJmZmn7Crpy3lyGUhiKYf1QjXsmjPkg5ASAb65MrSAHwgmzfY9lheu5cmAo4ANuM0qvzV4nY7958QmM3A==",
   "success": true,
   "projectFilePath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj",
   "expectedPackageFiles": [
