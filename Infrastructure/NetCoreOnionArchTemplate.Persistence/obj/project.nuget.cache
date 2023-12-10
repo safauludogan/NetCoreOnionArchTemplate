@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9JTCJkTtXGIv5ePWxPGCjpQEX6X3zFo+OkT/sq2+UjqI/7Ox3YAsII5jh6LrNqsOZTySIBZroVC+WPaLjz9X1g==",
+  "dgSpecHash": "QRdLqLxNfkvPIZle1x2cp6eFXUp1xrz0au5x1j/MzzNVHeJzUgUgocFVOrhRocgTmmMrDaFhPxpaRO/u3t4DGQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\asus\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

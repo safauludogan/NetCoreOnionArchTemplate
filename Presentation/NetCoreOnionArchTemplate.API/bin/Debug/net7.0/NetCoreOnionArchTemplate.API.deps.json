@@ -9,6 +9,9 @@
       "NetCoreOnionArchTemplate.API/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": "7.0.13",
+          "NetCoreOnionArchTemplate.Application": "1.0.0",
+          "NetCoreOnionArchTemplate.Infrastructure": "1.0.0",
+          "NetCoreOnionArchTemplate.Persistence": "1.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
@@ -27,6 +30,14 @@
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
+      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
       "Microsoft.OpenApi/1.4.3": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
@@ -72,6 +83,36 @@
             "fileVersion": "6.5.0.0"
           }
         }
+      },
+      "NetCoreOnionArchTemplate.Application/1.0.0": {
+        "dependencies": {
+          "NetCoreOnionArchTemplate.Domain": "1.0.0"
+        },
+        "runtime": {
+          "NetCoreOnionArchTemplate.Application.dll": {}
+        }
+      },
+      "NetCoreOnionArchTemplate.Domain/1.0.0": {
+        "runtime": {
+          "NetCoreOnionArchTemplate.Domain.dll": {}
+        }
+      },
+      "NetCoreOnionArchTemplate.Infrastructure/1.0.0": {
+        "dependencies": {
+          "NetCoreOnionArchTemplate.Application": "1.0.0"
+        },
+        "runtime": {
+          "NetCoreOnionArchTemplate.Infrastructure.dll": {}
+        }
+      },
+      "NetCoreOnionArchTemplate.Persistence/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
+          "NetCoreOnionArchTemplate.Application": "1.0.0"
+        },
+        "runtime": {
+          "NetCoreOnionArchTemplate.Persistence.dll": {}
+        }
       }
     }
   },
@@ -94,6 +135,13 @@
       "sha512": "sha512-Ckb5EDBUNJdFWyajfXzUIMRkhf52fHZOQuuZg/oiu8y7zDCVwD0iHhew6MnThjHmevanpxL3f5ci2TtHQEN6bw==",
       "path": "microsoft.extensions.apidescription.server/6.0.5",
       "hashPath": "microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cjWrLkJXK0rs4zofsK4bSdg+jhDLTaxrkXu4gS6Y7MAlCvRyNNgwY/lJi5RDlQOnSZweHqoyvgvbdvQsRIW+hg==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
     },
     "Microsoft.OpenApi/1.4.3": {
       "type": "package",
@@ -129,6 +177,26 @@
       "sha512": "sha512-OvbvxX+wL8skxTBttcBsVxdh73Fag4xwqEU2edh4JMn7Ws/xJHnY/JB1e9RoCb6XpDxUF3hD9A0Z1lEUx40Pfw==",
       "path": "swashbuckle.aspnetcore.swaggerui/6.5.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+    },
+    "NetCoreOnionArchTemplate.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NetCoreOnionArchTemplate.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NetCoreOnionArchTemplate.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NetCoreOnionArchTemplate.Persistence/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

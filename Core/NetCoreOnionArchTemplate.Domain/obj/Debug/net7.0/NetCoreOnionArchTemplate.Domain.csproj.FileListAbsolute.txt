@@ -9,3 +9,4 @@ C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Dom
 C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\refint\NetCoreOnionArchTemplate.Domain.dll
 C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.pdb
 C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\ref\NetCoreOnionArchTemplate.Domain.dll
+C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.sourcelink.json

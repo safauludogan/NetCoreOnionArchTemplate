@@ -7,14 +7,40 @@
   "targets": {
     ".NETCoreApp,Version=v7.0": {
       "NetCoreOnionArchTemplate.Infrastructure/1.0.0": {
+        "dependencies": {
+          "NetCoreOnionArchTemplate.Application": "1.0.0"
+        },
         "runtime": {
           "NetCoreOnionArchTemplate.Infrastructure.dll": {}
+        }
+      },
+      "NetCoreOnionArchTemplate.Application/1.0.0": {
+        "dependencies": {
+          "NetCoreOnionArchTemplate.Domain": "1.0.0"
+        },
+        "runtime": {
+          "NetCoreOnionArchTemplate.Application.dll": {}
+        }
+      },
+      "NetCoreOnionArchTemplate.Domain/1.0.0": {
+        "runtime": {
+          "NetCoreOnionArchTemplate.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
     "NetCoreOnionArchTemplate.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NetCoreOnionArchTemplate.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NetCoreOnionArchTemplate.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

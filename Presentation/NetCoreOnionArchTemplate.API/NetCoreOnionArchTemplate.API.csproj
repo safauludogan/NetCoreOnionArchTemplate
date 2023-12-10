@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Core\NetCoreOnionArchTemplate.Application\NetCoreOnionArchTemplate.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\NetCoreOnionArchTemplate.Infrastructure\NetCoreOnionArchTemplate.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\NetCoreOnionArchTemplate.Persistence\NetCoreOnionArchTemplate.Persistence.csproj" />

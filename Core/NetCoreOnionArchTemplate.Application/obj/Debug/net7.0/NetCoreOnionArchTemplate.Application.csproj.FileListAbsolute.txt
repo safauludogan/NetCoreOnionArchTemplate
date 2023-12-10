@@ -9,3 +9,8 @@ C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.App
 C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\refint\NetCoreOnionArchTemplate.Application.dll
 C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\NetCoreOnionArchTemplate.Application.pdb
 C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\ref\NetCoreOnionArchTemplate.Application.dll
+C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\bin\Debug\net7.0\NetCoreOnionArchTemplate.Domain.dll
+C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\bin\Debug\net7.0\NetCoreOnionArchTemplate.Domain.pdb
+C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\NetCoreOnionArchTemplate.Application.csproj.AssemblyReference.cache
+C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\NetCoreOnionArchTemplate.Application.sourcelink.json
+C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\NetCoreOnionArchTemplate.Application.csproj.CopyComplete

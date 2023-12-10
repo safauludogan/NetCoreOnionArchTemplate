@@ -9,3 +9,10 @@ C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Infrastructure\NetCoreOnionArchTe
 C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Infrastructure\NetCoreOnionArchTemplate.Persistence\obj\Debug\net7.0\refint\NetCoreOnionArchTemplate.Persistence.dll
 C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Infrastructure\NetCoreOnionArchTemplate.Persistence\obj\Debug\net7.0\NetCoreOnionArchTemplate.Persistence.pdb
 C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Infrastructure\NetCoreOnionArchTemplate.Persistence\obj\Debug\net7.0\ref\NetCoreOnionArchTemplate.Persistence.dll
+C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Infrastructure\NetCoreOnionArchTemplate.Persistence\bin\Debug\net7.0\NetCoreOnionArchTemplate.Application.dll
+C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Infrastructure\NetCoreOnionArchTemplate.Persistence\bin\Debug\net7.0\NetCoreOnionArchTemplate.Domain.dll
+C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Infrastructure\NetCoreOnionArchTemplate.Persistence\bin\Debug\net7.0\NetCoreOnionArchTemplate.Application.pdb
+C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Infrastructure\NetCoreOnionArchTemplate.Persistence\bin\Debug\net7.0\NetCoreOnionArchTemplate.Domain.pdb
+C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Infrastructure\NetCoreOnionArchTemplate.Persistence\obj\Debug\net7.0\NetCoreOnionArchTemplate.Persistence.csproj.AssemblyReference.cache
+C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Infrastructure\NetCoreOnionArchTemplate.Persistence\obj\Debug\net7.0\NetCoreOnionArchTemplate.Persistence.sourcelink.json
+C:\Users\asus\Desktop\NetCoreOnionArchTemplate\Infrastructure\NetCoreOnionArchTemplate.Persistence\obj\Debug\net7.0\NetCoreOnionArchTemplate.Persistence.csproj.CopyComplete
