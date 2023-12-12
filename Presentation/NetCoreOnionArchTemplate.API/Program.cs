@@ -1,3 +1,5 @@
+using FluentValidation.AspNetCore;
+using NetCoreOnionArchTemplate.Application.Validators.Products;
 using NetCoreOnionArchTemplate.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +11,9 @@ builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
 policy.WithOrigins("http://localhost.7285", "https://localhost.7285").AllowAnyHeader().AllowAnyMethod()
 ));
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddFluentValidation(configuration => configuration.RegisterValidatorsFromAssemblyContaining<CreateProductValidator>());
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

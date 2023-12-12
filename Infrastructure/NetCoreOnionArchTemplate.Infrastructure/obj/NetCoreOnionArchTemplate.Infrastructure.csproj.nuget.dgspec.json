@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj": {}
+    "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
+    "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
+        "projectUniqueName": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
         "projectName": "NetCoreOnionArchTemplate.Application",
-        "projectPath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
-        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\obj\\",
+        "projectPath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
+        "packagesPath": "C:\\Users\\safa.uludogan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\safa.uludogan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj": {
-                "projectPath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj"
+              "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj": {
+                "projectPath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj"
               }
             }
           }
@@ -48,6 +48,18 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.8.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.8.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.14, )"
@@ -73,20 +85,20 @@
         }
       }
     },
-    "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj": {
+    "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj",
         "projectName": "NetCoreOnionArchTemplate.Domain",
-        "projectPath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj",
-        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\obj\\",
+        "projectPath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj",
+        "packagesPath": "C:\\Users\\safa.uludogan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\safa.uludogan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -132,20 +144,20 @@
         }
       }
     },
-    "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj": {
+    "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj",
         "projectName": "NetCoreOnionArchTemplate.Infrastructure",
-        "projectPath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\safa.uludogan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\safa.uludogan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -160,8 +172,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
-                "projectPath": "C:\\Users\\asus\\Desktop\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
+              "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
+                "projectPath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
               }
             }
           }

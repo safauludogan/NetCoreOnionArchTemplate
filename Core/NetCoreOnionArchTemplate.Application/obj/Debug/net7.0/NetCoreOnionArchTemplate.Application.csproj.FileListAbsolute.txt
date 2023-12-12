@@ -1,0 +1,16 @@
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\bin\Debug\net7.0\NetCoreOnionArchTemplate.Application.deps.json
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\bin\Debug\net7.0\NetCoreOnionArchTemplate.Application.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\bin\Debug\net7.0\NetCoreOnionArchTemplate.Application.pdb
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\bin\Debug\net7.0\NetCoreOnionArchTemplate.Domain.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\bin\Debug\net7.0\NetCoreOnionArchTemplate.Domain.pdb
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\NetCoreOnionArchTemplate.Application.csproj.AssemblyReference.cache
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\NetCoreOnionArchTemplate.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\NetCoreOnionArchTemplate.Application.AssemblyInfoInputs.cache
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\NetCoreOnionArchTemplate.Application.AssemblyInfo.cs
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\NetCoreOnionArchTemplate.Application.csproj.CoreCompileInputs.cache
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\NetCoreOnionArchTemplate.Application.sourcelink.json
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\NetCoreOnionArchTemplate.Application.csproj.CopyComplete
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\NetCoreOnionArchTemplate.Application.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\refint\NetCoreOnionArchTemplate.Application.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\NetCoreOnionArchTemplate.Application.pdb
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Application\obj\Debug\net7.0\ref\NetCoreOnionArchTemplate.Application.dll
