@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NetCoreOnionArchTemplate.Application.Repositories;
+using NetCoreOnionArchTemplate.Application.RequestParameters;
 using NetCoreOnionArchTemplate.Application.ViewModels.Products;
 using NetCoreOnionArchTemplate.Domain.Entities;
 using System.Net;
@@ -20,9 +21,20 @@ namespace NetCoreOnionArchTemplate.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] Pagination pagination)
         {
-            return Ok(_productReadRepository.GetAll(tracking: false));
+            var totalCount = _productReadRepository.GetAll().Count();
+            var products = _productReadRepository.GetAll(tracking: false)
+                .Skip(pagination.Page * pagination.Size).Take(pagination.Size).Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Price,
+                    p.CreatedDate,
+                    p.UpdatedDate
+                }).ToList();
+
+            return Ok(new { products, totalCount });
         }
 
         [HttpGet("{id}")]
