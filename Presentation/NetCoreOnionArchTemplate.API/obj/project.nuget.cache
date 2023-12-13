@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WgKnro8bHPedgysg4aBpvSwsKiGRHrqOb5j3xldc+4Hn003KepRo8bivfMjDXQxt7I8gUIkL7QM4HecOTIGlow==",
+  "dgSpecHash": "KoHFTaUzzJvgRVgkYyrs6SpEhsurNDBcYOTVSgl7VxYdCFdaHYbIjnSCvIbjiiHEtrv05HrtGRtxoAMZasGG1A==",
   "success": true,
   "projectFilePath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.1.1\\microsoft.aspnetcore.authentication.abstractions.2.1.1.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.1.1\\microsoft.aspnetcore.authentication.cookies.2.1.1.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.1.1\\microsoft.aspnetcore.authentication.core.2.1.1.nupkg.sha512",
+    "C:\\Users\\safa.uludogan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.14\\microsoft.aspnetcore.authentication.jwtbearer.7.0.14.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.14\\microsoft.aspnetcore.cryptography.internal.7.0.14.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.14\\microsoft.aspnetcore.cryptography.keyderivation.7.0.14.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\microsoft.aspnetcore.dataprotection\\2.1.1\\microsoft.aspnetcore.dataprotection.2.1.1.nupkg.sha512",
