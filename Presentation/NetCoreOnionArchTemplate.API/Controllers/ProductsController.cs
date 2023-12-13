@@ -22,32 +22,32 @@ namespace NetCoreOnionArchTemplate.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] Pagination pagination)
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetAllProduct([FromQuery] Pagination pagination)
         {
             GetAllProductQueryResponse response = await _mediator.Send(new GetAllProductQueryRequest(pagination));
             return Ok(response);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("[action]/{id}")]
+        public async Task<IActionResult> GetProductById(int id)
         {
             return Ok(await _mediator.Send(new GetProductByIdQueryRequest(id)));
         }
 
-        [HttpPost("[action]/{id}")]
-        public async Task<IActionResult> Post([FromRoute] CreateProductCommandRequest request)
+        [HttpPost("[action]")]
+        public async Task<IActionResult> CreateProduct([FromQuery] CreateProductCommandRequest request)
         {
             return Ok((await _mediator.Send(request)).IsSuccess);
         }
-        [HttpPut]
-        public async Task<IActionResult> Put(UpdateProductCommandRequest request)
+        [HttpPut("[action]")]
+        public async Task<IActionResult> UpdateProduct(UpdateProductCommandRequest request)
         {
             return Ok(await _mediator.Send(request));
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        [HttpDelete("[action]/{id}")]
+        public async Task<IActionResult> DeleteProduct(int id)
         {
             return Ok((await _mediator.Send(new DeleteProductCommandRequest(id))).IsSuccess);
         }
