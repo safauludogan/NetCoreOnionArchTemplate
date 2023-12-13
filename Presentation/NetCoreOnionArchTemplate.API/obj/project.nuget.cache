@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "P3ZPBUleAP18I1l9BZzx6lMPER56Yu7DZfShU8owZsqtosMTz8v0ivaXkaHNaILXiAvyKsMPUuXUxk706BCN1g==",
+  "dgSpecHash": "XKmESJiepo4PZ4K51NDExyS4UhNyNTyqyco1h0YI825icQV8exVpZNFdS+r7VR2wQ82ZXF7svBeoqxWGBzl3Xg==",
   "success": true,
   "projectFilePath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,9 @@
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.8.1\\fluentvalidation.dependencyinjectionextensions.11.8.1.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\safa.uludogan\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
+    "C:\\Users\\safa.uludogan\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\safa.uludogan\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.13\\microsoft.aspnetcore.openapi.7.0.13.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "rnojmjHMt5qkI+J9vMuyn/Vwt8PT9GwudhmY0OMJ/dJevhvWTHY6vo8yIXE3OKfCbxKSrYWj3VjtBqBdNLBEwg==",
+  "dgSpecHash": "rkzOLhrNBO6x5GFSpBsMLcfa2MshBe6QzRkBmNweUEjp5bToiy2wHHTxHNGm+a0oAYiYESAXhbsBOvKksj9QEw==",
   "success": true,
   "projectFilePath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\fluentvalidation\\11.8.1\\fluentvalidation.11.8.1.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.8.1\\fluentvalidation.dependencyinjectionextensions.11.8.1.nupkg.sha512",
+    "C:\\Users\\safa.uludogan\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
+    "C:\\Users\\safa.uludogan\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\safa.uludogan\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.14\\microsoft.entityframeworkcore.7.0.14.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.14\\microsoft.entityframeworkcore.abstractions.7.0.14.nupkg.sha512",
     "C:\\Users\\safa.uludogan\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.14\\microsoft.entityframeworkcore.analyzers.7.0.14.nupkg.sha512",

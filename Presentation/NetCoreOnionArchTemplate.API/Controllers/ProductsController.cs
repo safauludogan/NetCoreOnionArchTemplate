@@ -1,7 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using NetCoreOnionArchTemplate.Application.Features.Commands.CreateProduct;
+using NetCoreOnionArchTemplate.Application.Features.Commands.DeleteProduct;
+using NetCoreOnionArchTemplate.Application.Features.Commands.UpdateProduct;
+using NetCoreOnionArchTemplate.Application.Features.Queries.GetAllProduct;
+using NetCoreOnionArchTemplate.Application.Features.Queries.GetProductById;
 using NetCoreOnionArchTemplate.Application.Repositories;
 using NetCoreOnionArchTemplate.Application.RequestParameters;
-using NetCoreOnionArchTemplate.Application.ViewModels.Products;
 using NetCoreOnionArchTemplate.Domain.Entities;
 using System.Net;
 
@@ -13,66 +18,43 @@ namespace NetCoreOnionArchTemplate.API.Controllers
     {
         private readonly IProductWriteRepository _productWriteRepository;
         private readonly IProductReadRepository _productReadRepository;
+        private readonly IMediator _mediator;
 
-        public ProductsController(IProductReadRepository productReadRepository, IProductWriteRepository productWriteRepository)
+        public ProductsController(IProductReadRepository productReadRepository, IProductWriteRepository productWriteRepository, IMediator mediator)
         {
             _productReadRepository = productReadRepository;
             _productWriteRepository = productWriteRepository;
+            _mediator = mediator;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] Pagination pagination)
         {
-            var totalCount = _productReadRepository.GetAll().Count();
-            var products = _productReadRepository.GetAll(tracking: false)
-                .Skip(pagination.Page * pagination.Size).Take(pagination.Size).Select(p => new
-                {
-                    p.Id,
-                    p.Name,
-                    p.Price,
-                    p.CreatedDate,
-                    p.UpdatedDate
-                }).ToList();
-
-            return Ok(new { products, totalCount });
+            GetAllProductQueryResponse response = await _mediator.Send(new GetAllProductQueryRequest(pagination));
+            return Ok(response);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await _productReadRepository.GetByIdAsync(id, tracking: false));
+            return Ok(await _mediator.Send(new GetProductByIdQueryRequest(id)));
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Post(VM_Create_Product model)
+        [HttpPost("[action]/{id}")]
+        public async Task<IActionResult> Post([FromRoute] CreateProductCommandRequest request)
         {
-            Product product = new()
-            {
-                Name = model.Name,
-                Price = model.Price,
-                Stock = model.Stock
-            };
-            await _productWriteRepository.AddAsync(product);
-            await _productWriteRepository.SaveAsync();
-            return StatusCode((int)HttpStatusCode.Created);
+            return Ok((await _mediator.Send(request)).IsSuccess);
         }
         [HttpPut]
-        public async Task<IActionResult> Put(VM_Update_Product model)
+        public async Task<IActionResult> Put(UpdateProductCommandRequest request)
         {
-            Product product = await _productReadRepository.GetByIdAsync(model.Id);
-            product.Stock = model.Stock;
-            product.Price = model.Price;
-            product.Name = model.Name;
-            await _productWriteRepository.SaveAsync();
-            return Ok();
+            return Ok(await _mediator.Send(request));
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            await _productWriteRepository.RemoveAsync(id);
-            await _productWriteRepository.SaveAsync();
-            return Ok();
+            return Ok((await _mediator.Send(new DeleteProductCommandRequest(id))).IsSuccess);
         }
     }
 }

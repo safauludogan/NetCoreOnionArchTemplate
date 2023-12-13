@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using NetCoreOnionArchTemplate.Application.ViewModels.Products;
+using NetCoreOnionArchTemplate.Application.Features.Commands.CreateProduct;
 
 namespace NetCoreOnionArchTemplate.Application.Validators.Products
 {
-    public class CreateProductValidator : AbstractValidator<VM_Create_Product>
+    public class CreateProductValidator : AbstractValidator<CreateProductCommandRequest>
     {
         public CreateProductValidator()
         {

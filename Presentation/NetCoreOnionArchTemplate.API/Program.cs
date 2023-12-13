@@ -1,10 +1,12 @@
 using FluentValidation.AspNetCore;
+using NetCoreOnionArchTemplate.Application;
 using NetCoreOnionArchTemplate.Application.Validators.Products;
 using NetCoreOnionArchTemplate.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddPersistanceServices();
+builder.Services.AddApplicationServices();
 
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
 //policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()
