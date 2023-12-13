@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using NetCoreOnionArchTemplate.Application.Repositories;
+using NetCoreOnionArchTemplate.Domain.Entities.Identity;
 using NetCoreOnionArchTemplate.Persistence.Context;
 using NetCoreOnionArchTemplate.Persistence.Repositories;
 
@@ -12,6 +13,8 @@ namespace NetCoreOnionArchTemplate.Persistence
         public static void AddPersistanceServices(this IServiceCollection services)
         {
             services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.ConnectionString));
+            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<DataContext>();
+            
             services.AddScoped<ICustomerReadRepository, CustomerReadRepository>();
             services.AddScoped<ICustomerWriteRepository, CustomerWriteRepository>();
             services.AddScoped<IOrderReadRepository, OrderReadRepository>();

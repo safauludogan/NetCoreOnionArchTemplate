@@ -176,3 +176,9 @@ C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\MediatR.dll
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\MediatR.Contracts.dll
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Microsoft.Extensions.Options.dll

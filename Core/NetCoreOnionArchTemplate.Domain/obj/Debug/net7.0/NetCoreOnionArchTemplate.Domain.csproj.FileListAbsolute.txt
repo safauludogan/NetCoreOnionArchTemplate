@@ -10,3 +10,4 @@ C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCore
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\refint\NetCoreOnionArchTemplate.Domain.dll
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.pdb
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\ref\NetCoreOnionArchTemplate.Domain.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.csproj.AssemblyReference.cache
