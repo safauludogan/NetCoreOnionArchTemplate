@@ -5,6 +5,8 @@ using NetCoreOnionArchTemplate.Application.Validators.Products;
 using NetCoreOnionArchTemplate.Persistence;
 using NetCoreOnionArchTemplate.Infrastructure;
 using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,10 +23,54 @@ builder.Services.AddControllers()
     .AddFluentValidation(configuration => configuration.RegisterValidatorsFromAssemblyContaining<CreateProductValidator>());
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+#region Swagger
+builder.Services.AddSwaggerGen(gen => {
+    var securityScheme = new OpenApiSecurityScheme
+    {
+        Name = "JWT Authentication",
+        Description = "Jwt Bearer Token **_only_**",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
+        Reference = new OpenApiReference
+        {
+            Id = JwtBearerDefaults.AuthenticationScheme,
+            Type = ReferenceType.SecurityScheme
+        }
+    };
 
-builder.Services.AddAuthentication("Admin")
-    .AddJwtBearer(opt =>
+    var vibeBilisimLink = "http://vibebilisim.com/";
+
+    gen.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "NetCoreArch Wep Api",
+        Version = "v1",
+        License = new OpenApiLicense
+        {
+            Name = "Powered by VibeBilisim",
+            Url = new Uri(vibeBilisimLink),
+        },
+        Contact = new OpenApiContact
+        {
+            Name = "Safa Uludoğan",
+            Email = "safa.uludogan@vibebilisim.com.tr"
+        },
+
+
+    });
+
+    gen.AddSecurityDefinition(securityScheme.Reference.Id, securityScheme);
+    gen.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+                    {securityScheme, Array.Empty<string>()}
+                });
+
+});
+#endregion
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer("Admin", opt =>
     {
         opt.TokenValidationParameters = new()
         {
@@ -51,6 +97,7 @@ app.UseCors();
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

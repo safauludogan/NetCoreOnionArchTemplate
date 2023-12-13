@@ -1,17 +1,18 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NetCoreOnionArchTemplate.Application.Features.Commands.Product.CreateProduct;
 using NetCoreOnionArchTemplate.Application.Features.Commands.Product.DeleteProduct;
 using NetCoreOnionArchTemplate.Application.Features.Commands.Product.UpdateProduct;
 using NetCoreOnionArchTemplate.Application.Features.Queries.GetAllProduct;
 using NetCoreOnionArchTemplate.Application.Features.Queries.GetProductById;
-using NetCoreOnionArchTemplate.Application.Repositories;
 using NetCoreOnionArchTemplate.Application.RequestParameters;
 
 namespace NetCoreOnionArchTemplate.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = "Admin")]
     public class ProductsController : ControllerBase
     {
         private readonly IMediator _mediator;
