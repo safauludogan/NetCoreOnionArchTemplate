@@ -1,8 +1,7 @@
 ﻿using MediatR;
 using NetCoreOnionArchTemplate.Application.Repositories;
-using NetCoreOnionArchTemplate.Domain.Entities;
 
-namespace NetCoreOnionArchTemplate.Application.Features.Commands.UpdateProduct
+namespace NetCoreOnionArchTemplate.Application.Features.Commands.Product.UpdateProduct
 {
     public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest, UpdateProductCommandResponse>
     {
@@ -17,7 +16,7 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.UpdateProduct
 
         public async Task<UpdateProductCommandResponse> Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
         {
-            Product product = await _productReadRepository.GetByIdAsync(request.Id);
+            Domain.Entities.Product product = await _productReadRepository.GetByIdAsync(request.Id);
             product.Stock = request.Stock;
             product.Price = request.Price;
             product.Name = request.Name;

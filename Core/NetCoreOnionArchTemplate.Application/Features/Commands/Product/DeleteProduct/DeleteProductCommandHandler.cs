@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using NetCoreOnionArchTemplate.Application.Repositories;
 
-namespace NetCoreOnionArchTemplate.Application.Features.Commands.DeleteProduct
+namespace NetCoreOnionArchTemplate.Application.Features.Commands.Product.DeleteProduct
 {
     public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommandRequest, DeleteProductCommandResponse>
     {

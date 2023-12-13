@@ -6,7 +6,7 @@ using NetCoreOnionArchTemplate.Domain.Entities.Identity;
 
 namespace NetCoreOnionArchTemplate.Persistence.Context
 {
-    public class DataContext : IdentityDbContext<AppUser, AppRole, string>
+    public class DataContext : IdentityDbContext<AppUser, AppRole, int>
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         { }

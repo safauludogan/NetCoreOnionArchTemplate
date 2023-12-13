@@ -1,14 +1,12 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using NetCoreOnionArchTemplate.Application.Features.Commands.CreateProduct;
-using NetCoreOnionArchTemplate.Application.Features.Commands.DeleteProduct;
-using NetCoreOnionArchTemplate.Application.Features.Commands.UpdateProduct;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Product.CreateProduct;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Product.DeleteProduct;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Product.UpdateProduct;
 using NetCoreOnionArchTemplate.Application.Features.Queries.GetAllProduct;
 using NetCoreOnionArchTemplate.Application.Features.Queries.GetProductById;
 using NetCoreOnionArchTemplate.Application.Repositories;
 using NetCoreOnionArchTemplate.Application.RequestParameters;
-using NetCoreOnionArchTemplate.Domain.Entities;
-using System.Net;
 
 namespace NetCoreOnionArchTemplate.API.Controllers
 {
@@ -16,14 +14,10 @@ namespace NetCoreOnionArchTemplate.API.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IProductWriteRepository _productWriteRepository;
-        private readonly IProductReadRepository _productReadRepository;
         private readonly IMediator _mediator;
 
-        public ProductsController(IProductReadRepository productReadRepository, IProductWriteRepository productWriteRepository, IMediator mediator)
+        public ProductsController(IMediator mediator)
         {
-            _productReadRepository = productReadRepository;
-            _productWriteRepository = productWriteRepository;
             _mediator = mediator;
         }
 

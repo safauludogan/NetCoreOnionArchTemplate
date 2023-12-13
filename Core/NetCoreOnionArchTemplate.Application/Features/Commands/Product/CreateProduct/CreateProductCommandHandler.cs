@@ -1,9 +1,8 @@
 ﻿using MediatR;
 using NetCoreOnionArchTemplate.Application.Repositories;
-using NetCoreOnionArchTemplate.Domain.Entities;
-using System.Net;
 
-namespace NetCoreOnionArchTemplate.Application.Features.Commands.CreateProduct
+
+namespace NetCoreOnionArchTemplate.Application.Features.Commands.Product.CreateProduct
 {
     public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest, CreateProductCommandResponse>
     {
@@ -14,7 +13,7 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.CreateProduct
         }
         public async Task<CreateProductCommandResponse> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
         {
-            Product product = new()
+            Domain.Entities.Product product = new()
             {
                 Name = request.Name,
                 Price = request.Price,

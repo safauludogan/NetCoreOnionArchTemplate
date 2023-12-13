@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace NetCoreOnionArchTemplate.Application.Features.Commands.CreateProduct
+namespace NetCoreOnionArchTemplate.Application.Features.Commands.Product.CreateProduct
 {
     public class CreateProductCommandRequest : IRequest<CreateProductCommandResponse>
     {
