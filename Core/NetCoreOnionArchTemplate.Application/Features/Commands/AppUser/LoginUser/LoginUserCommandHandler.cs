@@ -13,7 +13,7 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.LoginUs
 
         public async Task<LoginUserCommandResponse> Handle(LoginUserCommandRequest request, CancellationToken cancellationToken)
         {
-            var token = await _authService.LoginAsync(request.UsernameOrEmail, request.Password, 10);
+            var token = await _authService.LoginAsync(request.UsernameOrEmail, request.Password, 10, 5);
             return new LoginUserSuccessCommandResponse()
             {
                 Token = token

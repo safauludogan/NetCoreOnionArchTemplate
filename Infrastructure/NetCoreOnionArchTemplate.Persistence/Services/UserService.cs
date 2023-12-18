@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services;
 using NetCoreOnionArchTemplate.Application.DTOs.User;
+using NetCoreOnionArchTemplate.Application.Exceptions;
 using NetCoreOnionArchTemplate.Domain.Entities.Identity;
 
 namespace NetCoreOnionArchTemplate.Persistence.Services
@@ -31,6 +32,19 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
                 response.Message += $"{error.Code} - {error.Description}\n";
             }
             return response;
+        }
+
+        public async Task UpdateRefreshToken(string refreshToken, AppUser user, DateTime accessTokenDate
+            , int refreshTokenLifeTime)
+        {
+            if (user != null)
+            {
+                user.RefreshToken = refreshToken;
+                user.RefreshTokenEndDate = accessTokenDate.AddSeconds(refreshTokenLifeTime);
+                await _userManager.UpdateAsync(user);
+            }
+            else
+                throw new NotFoundUserException();
         }
     }
 }

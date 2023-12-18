@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.LoginUser;
+using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.RefreshTokenLogin;
 
 namespace NetCoreOnionArchTemplate.API.Controllers
 {
@@ -20,6 +21,13 @@ namespace NetCoreOnionArchTemplate.API.Controllers
         public async Task<IActionResult> Login(LoginUserCommandRequest request)
         {
             var response = await _mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> RefreshTokenLogin([FromQuery] RefreshTokenLoginCommandRequest request)
+        {
+            RefreshTokenLoginCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
     }
