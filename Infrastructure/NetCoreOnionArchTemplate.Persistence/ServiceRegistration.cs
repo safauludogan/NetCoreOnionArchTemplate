@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using NetCoreOnionArchTemplate.Application.Abstractions.Services;
 using NetCoreOnionArchTemplate.Application.Repositories;
 using NetCoreOnionArchTemplate.Domain.Entities.Identity;
 using NetCoreOnionArchTemplate.Persistence.Context;
 using NetCoreOnionArchTemplate.Persistence.Repositories;
+using NetCoreOnionArchTemplate.Persistence.Services;
 
 namespace NetCoreOnionArchTemplate.Persistence
 {
@@ -28,6 +30,9 @@ namespace NetCoreOnionArchTemplate.Persistence
             services.AddScoped<IOrderWriteRepository, OrderWriteRepository>();
             services.AddScoped<IProductReadRepository, ProductReadRepository>();
             services.AddScoped<IProductWriteRepository, ProductWriteRepository>();
+
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAuthService, AuthService>();
         }
     }
 }

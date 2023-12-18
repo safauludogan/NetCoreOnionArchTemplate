@@ -1,36 +1,34 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Identity;
-using NetCoreOnionArchTemplate.Application.Exceptions;
+using NetCoreOnionArchTemplate.Application.Abstractions.Services;
+using NetCoreOnionArchTemplate.Application.DTOs.User;
 
 namespace NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.CreateUser
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommandRequest, CreateUserCommandResponse>
     {
-        private readonly UserManager<Domain.Entities.Identity.AppUser> _userManager;
+        private readonly IUserService _userService;
 
-        public CreateUserCommandHandler(UserManager<Domain.Entities.Identity.AppUser> userManager)
+        public CreateUserCommandHandler(IUserService userService)
         {
-            _userManager = userManager;
+            _userService = userService;
         }
 
         public async Task<CreateUserCommandResponse> Handle(CreateUserCommandRequest request, CancellationToken cancellationToken)
         {
 
-            IdentityResult result = await _userManager.CreateAsync(new()
+            CreateUserResponse response = await _userService.CreateAsync(new()
             {
-                UserName = request.UserName,
-                NameSurname = request.NameSurname,
                 Email = request.Email,
-            }, request.Password);
-
-            CreateUserCommandResponse response = new() { IsSuccess = result.Succeeded };
-            if (result.Succeeded)
-                response.Message = "User Created";
-            foreach (var error in result.Errors)
+                NameSurname = request.NameSurname,
+                Password = request.Password,
+                PasswordConfirm = request.PasswordConfirm,
+                UserName = request.UserName
+            });
+            return new()
             {
-                response.Message += $"{error.Code} - {error.Description}\n";
-            }
-            return response;
+                Message = response.Message,
+                IsSuccess = response.IsSuccess,
+            };
         }
     }
 }
