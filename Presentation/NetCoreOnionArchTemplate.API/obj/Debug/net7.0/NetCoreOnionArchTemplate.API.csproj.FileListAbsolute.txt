@@ -129,6 +129,17 @@ C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Serilog.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Serilog.AspNetCore.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Serilog.Extensions.Hosting.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Serilog.Extensions.Logging.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Serilog.Formatting.Compact.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Serilog.Settings.Configuration.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Serilog.Sinks.Console.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Serilog.Sinks.Debug.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Serilog.Sinks.File.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Serilog.Sinks.MSSqlServer.dll
+C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Serilog.Sinks.PeriodicBatching.dll
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll

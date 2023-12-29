@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using NetCoreOnionArchTemplate.Application.Repositories;
 
 namespace NetCoreOnionArchTemplate.Application.Features.Commands.Product.UpdateProduct
@@ -7,11 +8,13 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.Product.UpdateP
     {
         private readonly IProductReadRepository _productReadRepository;
         private readonly IProductWriteRepository _productWriteRepository;
+        private readonly ILogger<UpdateProductCommandHandler> _logger;
 
-        public UpdateProductCommandHandler(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository)
+        public UpdateProductCommandHandler(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository, ILogger<UpdateProductCommandHandler> logger)
         {
             _productWriteRepository = productWriteRepository;
             _productReadRepository = productReadRepository;
+            _logger = logger;
         }
 
         public async Task<UpdateProductCommandResponse> Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
@@ -21,6 +24,7 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.Product.UpdateP
             product.Price = request.Price;
             product.Name = request.Name;
             await _productWriteRepository.SaveAsync();
+            _logger.LogInformation("Product Güncellendi...");
             return new();
         }
     }

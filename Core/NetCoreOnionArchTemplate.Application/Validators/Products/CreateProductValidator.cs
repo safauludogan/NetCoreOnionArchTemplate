@@ -10,7 +10,7 @@ namespace NetCoreOnionArchTemplate.Application.Validators.Products
             RuleFor(p => p.Name)
                 .NotEmpty()
                 .NotNull()
-                    .WithMessage("Lütfen ürün adını geçmeyiniz.")
+                    .WithMessage("Lütfen ürün adını boş geçmeyiniz.")
                 .MaximumLength(150)
                 .MinimumLength(5)
                     .WithMessage("Lütfen ürün adını 5-150 karakter arasında giriniz");

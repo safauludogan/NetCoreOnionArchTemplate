@@ -7,6 +7,13 @@ using NetCoreOnionArchTemplate.Infrastructure;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
+using Serilog;
+using Serilog.Core;
+using Serilog.Sinks.MSSqlServer;
+using System.Collections.ObjectModel;
+using System.Data;
+using System.Security.Claims;
+using Serilog.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +25,26 @@ builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
 //policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()
 policy.WithOrigins("http://localhost.7285", "https://localhost.7285").AllowAnyHeader().AllowAnyMethod()
 ));
+
+
+Logger log = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("logs/log.txt")
+    .WriteTo.MSSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), "logs", autoCreateSqlTable: true,
+
+        columnOptions: new ColumnOptions
+        {
+            AdditionalColumns = new Collection<SqlColumn>
+            {
+                new(){ColumnName = "LogEvent",DataType = SqlDbType.NVarChar},
+                new(){ColumnName = "Username",DataType = SqlDbType.NVarChar}
+            }
+        })
+    .Enrich.FromLogContext()
+    .MinimumLevel.Information()
+    .CreateLogger();
+
+builder.Host.UseSerilog(log);
 
 builder.Services.AddControllers()
     .AddFluentValidation(configuration => configuration.RegisterValidatorsFromAssemblyContaining<CreateProductValidator>());
@@ -83,7 +110,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidAudience = builder.Configuration["Token:Audience"],
             ValidIssuer = builder.Configuration["Token:Issuer"],
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"])),
-            LifetimeValidator = (notBefore, expires, securityToken, validationParameters) => expires != null ? expires > DateTime.UtcNow : false
+            LifetimeValidator = (notBefore, expires, securityToken, validationParameters) => expires != null ? expires > DateTime.UtcNow : false,
+
+            NameClaimType = ClaimTypes.Name //JWT üzerinde Name claimne karşılık gelen değeri User.Identity.Name propertysinden elde edebiliriz.
         };
     });
 
@@ -101,6 +130,13 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.Use(async (context, next) =>
+{
+    var username = context.User?.Identity?.IsAuthenticated != null || true ? context.User.Identity.Name : null;
+    LogContext.PushProperty("Username", username);
+    await next();
+});
 
 app.MapControllers();
 
