@@ -5376,23 +5376,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\safa.uludogan\\.nuget\\packages\\": {},
+    "C:\\Users\\asus\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj",
+      "projectUniqueName": "C:\\Users\\asus\\Desktop\\.net\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj",
       "projectName": "NetCoreOnionArchTemplate.API",
-      "projectPath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj",
-      "packagesPath": "C:\\Users\\safa.uludogan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\obj\\",
+      "projectPath": "C:\\Users\\asus\\Desktop\\.net\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj",
+      "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\asus\\Desktop\\.net\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\safa.uludogan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5407,14 +5407,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
-              "projectPath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
+            "C:\\Users\\asus\\Desktop\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
+              "projectPath": "C:\\Users\\asus\\Desktop\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
             },
-            "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj"
+            "C:\\Users\\asus\\Desktop\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\asus\\Desktop\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj"
             },
-            "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj": {
-              "projectPath": "C:\\Users\\safa.uludogan\\Desktop\\.netcore_my\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj"
+            "C:\\Users\\asus\\Desktop\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj": {
+              "projectPath": "C:\\Users\\asus\\Desktop\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj"
             }
           }
         }

@@ -26,4 +26,8 @@
     <ProjectReference Include="..\..\Infrastructure\NetCoreOnionArchTemplate.Persistence\NetCoreOnionArchTemplate.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Middlewares\" />
+  </ItemGroup>
+
 </Project>

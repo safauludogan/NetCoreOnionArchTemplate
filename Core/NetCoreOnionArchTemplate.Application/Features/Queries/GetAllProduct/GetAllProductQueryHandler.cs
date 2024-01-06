@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using NetCoreOnionArchTemplate.Application.Repositories;
 
 namespace NetCoreOnionArchTemplate.Application.Features.Queries.GetAllProduct
@@ -6,14 +7,17 @@ namespace NetCoreOnionArchTemplate.Application.Features.Queries.GetAllProduct
     public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQueryRequest, GetAllProductQueryResponse>
     {
         private readonly IProductReadRepository _productReadRepository;
-        public GetAllProductQueryHandler(IProductReadRepository productReadRepository)
-        {
-            _productReadRepository = productReadRepository;
-        }
+        private readonly ILogger<GetAllProductQueryHandler> _logger;
+		public GetAllProductQueryHandler(IProductReadRepository productReadRepository, ILogger<GetAllProductQueryHandler> logger)
+		{
+			_productReadRepository = productReadRepository;
+			_logger = logger;
+		}
 
-        public async Task<GetAllProductQueryResponse> Handle(GetAllProductQueryRequest request, CancellationToken cancellationToken)
+		public async Task<GetAllProductQueryResponse> Handle(GetAllProductQueryRequest request, CancellationToken cancellationToken)
         {
-            var totalCount = _productReadRepository.GetAll().Count();
+            _logger.LogInformation("Get all products");
+			var totalCount = _productReadRepository.GetAll().Count();
             var products = _productReadRepository.GetAll(tracking: false)
             .Skip(request._Pagination.Page * request._Pagination.Size).Take(request._Pagination.Size).Select(p => new
             {

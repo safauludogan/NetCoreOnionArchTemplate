@@ -14,6 +14,7 @@ using System.Collections.ObjectModel;
 using System.Data;
 using System.Security.Claims;
 using Serilog.Context;
+using NetCoreOnionArchTemplate.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,7 +37,7 @@ Logger log = new LoggerConfiguration()
         {
             AdditionalColumns = new Collection<SqlColumn>
             {
-                new(){ColumnName = "LogEvent",DataType = SqlDbType.NVarChar},
+                //new(){ColumnName = "LogEvent",DataType = SqlDbType.NVarChar},
                 new(){ColumnName = "Username",DataType = SqlDbType.NVarChar}
             }
         })
@@ -123,6 +124,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.ConfigureExceptionHandler(app.Services.GetRequiredService<ILogger<Program>>());
+app.UseSerilogRequestLogging();
 
 app.UseCors();
 

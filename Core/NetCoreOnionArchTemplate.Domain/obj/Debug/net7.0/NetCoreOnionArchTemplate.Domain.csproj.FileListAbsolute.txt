@@ -11,3 +11,16 @@ C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCore
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\refint\NetCoreOnionArchTemplate.Domain.dll
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.pdb
 C:\Users\safa.uludogan\Desktop\.netcore_my\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\ref\NetCoreOnionArchTemplate.Domain.dll
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\bin\Debug\net7.0\NetCoreOnionArchTemplate.Domain.deps.json
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\bin\Debug\net7.0\NetCoreOnionArchTemplate.Domain.dll
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\bin\Debug\net7.0\NetCoreOnionArchTemplate.Domain.pdb
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.csproj.AssemblyReference.cache
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.AssemblyInfoInputs.cache
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.AssemblyInfo.cs
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.csproj.CoreCompileInputs.cache
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.sourcelink.json
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.dll
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\refint\NetCoreOnionArchTemplate.Domain.dll
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.pdb
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\ref\NetCoreOnionArchTemplate.Domain.dll
