@@ -12,7 +12,6 @@ namespace NetCoreOnionArchTemplate.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(AuthenticationSchemes = "Admin")]
     public class ProductsController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -36,18 +35,21 @@ namespace NetCoreOnionArchTemplate.API.Controllers
         }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> CreateProduct([FromQuery] CreateProductCommandRequest request)
+		[Authorize(AuthenticationSchemes = "Admin")]
+		public async Task<IActionResult> CreateProduct([FromQuery] CreateProductCommandRequest request)
         {
             return Ok((await _mediator.Send(request)).IsSuccess);
         }
         [HttpPut("[action]")]
-        public async Task<IActionResult> UpdateProduct(UpdateProductCommandRequest request)
+		[Authorize(AuthenticationSchemes = "Admin")]
+		public async Task<IActionResult> UpdateProduct(UpdateProductCommandRequest request)
         {
             return Ok(await _mediator.Send(request));
         }
 
         [HttpDelete("[action]/{id}")]
-        public async Task<IActionResult> DeleteProduct(int id)
+		[Authorize(AuthenticationSchemes = "Admin")]
+		public async Task<IActionResult> DeleteProduct(int id)
         {
             return Ok((await _mediator.Send(new DeleteProductCommandRequest(id))).IsSuccess);
         }

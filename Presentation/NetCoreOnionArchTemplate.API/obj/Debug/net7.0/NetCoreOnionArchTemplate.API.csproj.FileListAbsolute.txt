@@ -239,6 +239,7 @@ C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArc
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Serilog.dll
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Serilog.AspNetCore.dll
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Serilog.Extensions.Hosting.dll
@@ -278,9 +279,11 @@ C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArc
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\NetCoreOnionArchTemplate.Domain.dll
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\NetCoreOnionArchTemplate.Infrastructure.dll
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\NetCoreOnionArchTemplate.Persistence.dll
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\NetCoreOnionArchTemplate.SignalR.dll
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\NetCoreOnionArchTemplate.Application.pdb
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\NetCoreOnionArchTemplate.Infrastructure.pdb
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\NetCoreOnionArchTemplate.Persistence.pdb
+C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\NetCoreOnionArchTemplate.SignalR.pdb
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\NetCoreOnionArchTemplate.Domain.pdb
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\obj\Debug\net7.0\NetCoreOnionArchTemplate.API.csproj.AssemblyReference.cache
 C:\Users\asus\Desktop\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\obj\Debug\net7.0\NetCoreOnionArchTemplate.API.GeneratedMSBuildEditorConfig.editorconfig

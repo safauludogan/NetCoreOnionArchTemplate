@@ -15,16 +15,21 @@ using System.Data;
 using System.Security.Claims;
 using Serilog.Context;
 using NetCoreOnionArchTemplate.API.Extensions;
+using NetCoreOnionArchTemplate.SignalR;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddPersistanceServices();
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices();
+builder.Services.AddSignalRServices();
 
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
 //policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()
-policy.WithOrigins("http://localhost.7285", "https://localhost.7285").AllowAnyHeader().AllowAnyMethod()
+policy.WithOrigins("http://localhost.7285", "https://localhost.7285")
+.AllowAnyHeader()
+.AllowAnyMethod()
+.AllowCredentials()
 ));
 
 
@@ -142,5 +147,6 @@ app.Use(async (context, next) =>
 });
 
 app.MapControllers();
+app.MapHubs();
 
 app.Run();
