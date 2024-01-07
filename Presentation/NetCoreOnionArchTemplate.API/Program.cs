@@ -19,6 +19,8 @@ using NetCoreOnionArchTemplate.SignalR;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddHttpContextAccessor();//Client'tan gelen request neticesinde oluşturulan HttpContext nesnesine katmanlardaki class'lar üzerinden erişebilmemizi sağlar.
+
 builder.Services.AddPersistanceServices();
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices();
