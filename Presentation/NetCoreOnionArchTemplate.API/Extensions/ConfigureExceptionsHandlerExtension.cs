@@ -5,6 +5,7 @@ using System.Text.Json;
 
 namespace NetCoreOnionArchTemplate.API.Extensions
 {
+	//Global olarak oluşan tüm Exceptionları Loglamak için yazılan bir servistir.
 	static public class ConfigureExceptionsHandlerExtension
 	{
 		public static void ConfigureExceptionHandler<T>(this WebApplication application, ILogger<T> logger)

@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.LoginUser;
+using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.PasswordReset;
 using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.RefreshTokenLogin;
+using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.VerifyResetToken;
 
 namespace NetCoreOnionArchTemplate.API.Controllers
 {
@@ -30,5 +32,19 @@ namespace NetCoreOnionArchTemplate.API.Controllers
             RefreshTokenLoginCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
-    }
+
+		[HttpPost("[action]")]
+		public async Task<IActionResult> PasswordReset([FromBody] PasswordResetCommandRequest request)
+		{
+			PasswordResetCommandResponse response = await _mediator.Send(request);
+			return Ok(response);
+		}
+
+		[HttpPost("[action]")]
+		public async Task<IActionResult> VerifyResetToken([FromBody] VerifyResetTokenCommandRequest request)
+		{
+			VerifyResetTokenCommandResponse response = await _mediator.Send(request);
+			return Ok(response);
+		}
+	}
 }

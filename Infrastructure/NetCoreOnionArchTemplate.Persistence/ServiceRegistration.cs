@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services;
 using NetCoreOnionArchTemplate.Application.Repositories;
@@ -22,7 +23,8 @@ namespace NetCoreOnionArchTemplate.Persistence
                 options.Password.RequireDigit = false;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
-            }).AddEntityFrameworkStores<DataContext>();
+            }).AddEntityFrameworkStores<DataContext>()
+            .AddDefaultTokenProviders();
             
             services.AddScoped<ICustomerReadRepository, CustomerReadRepository>();
             services.AddScoped<ICustomerWriteRepository, CustomerWriteRepository>();

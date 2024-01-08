@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using NetCoreOnionArchTemplate.Application.Abstractions.Services;
 using NetCoreOnionArchTemplate.Application.Abstractions.Token;
+using NetCoreOnionArchTemplate.Infrastructure.Services;
 using NetCoreOnionArchTemplate.Infrastructure.Services.Token;
 
 namespace NetCoreOnionArchTemplate.Infrastructure
@@ -10,6 +12,7 @@ namespace NetCoreOnionArchTemplate.Infrastructure
         {
 
             services.AddScoped<ITokenHandler, TokenHandler>();
+            services.AddScoped<IMailService, MailService>();
         }
     }
 }
