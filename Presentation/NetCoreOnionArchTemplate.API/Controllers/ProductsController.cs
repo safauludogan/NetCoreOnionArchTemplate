@@ -7,13 +7,13 @@ using NetCoreOnionArchTemplate.Application.Enums;
 using NetCoreOnionArchTemplate.Application.Features.Commands.Product.CreateProduct;
 using NetCoreOnionArchTemplate.Application.Features.Commands.Product.DeleteProduct;
 using NetCoreOnionArchTemplate.Application.Features.Commands.Product.UpdateProduct;
-using NetCoreOnionArchTemplate.Application.Features.Queries.GetAllProduct;
-using NetCoreOnionArchTemplate.Application.Features.Queries.GetProductById;
+using NetCoreOnionArchTemplate.Application.Features.Queries.Product.GetAllProduct;
+using NetCoreOnionArchTemplate.Application.Features.Queries.Product.GetProductById;
 using NetCoreOnionArchTemplate.Application.RequestParameters;
 
 namespace NetCoreOnionArchTemplate.API.Controllers
 {
-	[Route("api/[controller]")]
+    [Route("api/[controller]")]
 	[Authorize(AuthenticationSchemes = "Admin")]
 
 	[ApiController]

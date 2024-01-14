@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using NetCoreOnionArchTemplate.Application.RequestParameters;
 
-namespace NetCoreOnionArchTemplate.Application.Features.Queries.GetAllProduct
+namespace NetCoreOnionArchTemplate.Application.Features.Queries.Product.GetAllProduct
 {
     public class GetAllProductQueryRequest : IRequest<GetAllProductQueryResponse>
     {

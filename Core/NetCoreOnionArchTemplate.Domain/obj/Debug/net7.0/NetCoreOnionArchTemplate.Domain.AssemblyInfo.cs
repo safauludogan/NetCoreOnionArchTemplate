@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NetCoreOnionArchTemplate.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fd2589b752825cfee0dbf6cdf2640e1dc60638e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3881ed4aaeb2fe5878c7853356f1f10a1d7288a")]
 [assembly: System.Reflection.AssemblyProductAttribute("NetCoreOnionArchTemplate.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NetCoreOnionArchTemplate.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

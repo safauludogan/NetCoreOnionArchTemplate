@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using NetCoreOnionArchTemplate.Application.Repositories;
 
-namespace NetCoreOnionArchTemplate.Application.Features.Queries.GetProductById
+namespace NetCoreOnionArchTemplate.Application.Features.Queries.Product.GetProductById
 {
     public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQueryRequest, GetProductByIdQueryResponse>
     {
