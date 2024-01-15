@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services;
 using NetCoreOnionArchTemplate.Domain.Entities.Identity;
 
@@ -13,14 +14,16 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 			_roleManager = roleManager;
 		}
 
-		public IDictionary<int, string> GetAllRoles()
+		public async Task<List<AppRole>> GetAllRoles(int page, int size)
 		{
-			return _roleManager.Roles.ToDictionary(role => role.Id, role => role.Name);
+			if(page == -1 || size == -1)
+				return await _roleManager.Roles.ToListAsync();
+			return await _roleManager.Roles.Skip(page * size).Take(size).ToListAsync();
 		}
 
 		public async Task<(int id, string name)> GetRoleByIdAsync(int id)
 		{
-			string role = await _roleManager.GetRoleIdAsync(new() { Id = id });
+			string? role = await _roleManager.GetRoleNameAsync(new() { Id = id });
 			return (id, role);
 		}
 
@@ -30,9 +33,9 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 			return result.Succeeded;
 		}
 
-		public async Task<bool> DeleteRoleAsync(string name)
+		public async Task<bool> DeleteRoleAsync(int Id)
 		{
-			IdentityResult result = await _roleManager.DeleteAsync(new() { Name = name });
+			IdentityResult result = await _roleManager.DeleteAsync(new() { Id = Id });
 			return result.Succeeded;
 		}
 
