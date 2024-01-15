@@ -22,6 +22,21 @@ namespace NetCoreOnionArchTemplate.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("AppRoleEndpoint", b =>
+                {
+                    b.Property<int>("EndpointsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RolesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("EndpointsId", "RolesId");
+
+                    b.HasIndex("RolesId");
+
+                    b.ToTable("AppRoleEndpoint");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.Property<int>("Id")
@@ -148,6 +163,46 @@ namespace NetCoreOnionArchTemplate.Persistence.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("NetCoreOnionArchTemplate.Domain.Entities.Endpoint", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ActionType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Definition")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HttpType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MenuId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MenuId");
+
+                    b.ToTable("Endpoints");
+                });
+
             modelBuilder.Entity("NetCoreOnionArchTemplate.Domain.Entities.Identity.AppRole", b =>
                 {
                     b.Property<int>("Id")
@@ -256,6 +311,29 @@ namespace NetCoreOnionArchTemplate.Persistence.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("NetCoreOnionArchTemplate.Domain.Entities.Menu", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Menus");
+                });
+
             modelBuilder.Entity("NetCoreOnionArchTemplate.Domain.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -332,6 +410,21 @@ namespace NetCoreOnionArchTemplate.Persistence.Migrations
                     b.ToTable("OrderProduct");
                 });
 
+            modelBuilder.Entity("AppRoleEndpoint", b =>
+                {
+                    b.HasOne("NetCoreOnionArchTemplate.Domain.Entities.Endpoint", null)
+                        .WithMany()
+                        .HasForeignKey("EndpointsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NetCoreOnionArchTemplate.Domain.Entities.Identity.AppRole", null)
+                        .WithMany()
+                        .HasForeignKey("RolesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("NetCoreOnionArchTemplate.Domain.Entities.Identity.AppRole", null)
@@ -383,6 +476,17 @@ namespace NetCoreOnionArchTemplate.Persistence.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("NetCoreOnionArchTemplate.Domain.Entities.Endpoint", b =>
+                {
+                    b.HasOne("NetCoreOnionArchTemplate.Domain.Entities.Menu", "Menu")
+                        .WithMany("Endpoints")
+                        .HasForeignKey("MenuId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Menu");
+                });
+
             modelBuilder.Entity("NetCoreOnionArchTemplate.Domain.Entities.Order", b =>
                 {
                     b.HasOne("NetCoreOnionArchTemplate.Domain.Entities.Customer", "Customer")
@@ -412,6 +516,11 @@ namespace NetCoreOnionArchTemplate.Persistence.Migrations
             modelBuilder.Entity("NetCoreOnionArchTemplate.Domain.Entities.Customer", b =>
                 {
                     b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("NetCoreOnionArchTemplate.Domain.Entities.Menu", b =>
+                {
+                    b.Navigation("Endpoints");
                 });
 #pragma warning restore 612, 618
         }
