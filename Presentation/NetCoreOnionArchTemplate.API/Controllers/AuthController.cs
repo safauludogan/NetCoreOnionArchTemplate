@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.LoginUser;
 using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.PasswordReset;

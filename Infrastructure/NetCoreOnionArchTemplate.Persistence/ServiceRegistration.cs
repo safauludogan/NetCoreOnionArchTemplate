@@ -40,6 +40,7 @@ namespace NetCoreOnionArchTemplate.Persistence
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped<IAuthorizationEndpointService, AuthorizationEndpointService>();
         }
     }
 }

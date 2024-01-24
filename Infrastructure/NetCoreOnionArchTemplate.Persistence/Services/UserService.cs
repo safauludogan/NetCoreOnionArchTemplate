@@ -1,21 +1,25 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services;
 using NetCoreOnionArchTemplate.Application.DTOs.User;
 using NetCoreOnionArchTemplate.Application.Exceptions;
 using NetCoreOnionArchTemplate.Application.Helpers;
+using NetCoreOnionArchTemplate.Application.Repositories;
+using NetCoreOnionArchTemplate.Domain.Entities;
 using NetCoreOnionArchTemplate.Domain.Entities.Identity;
-using System.Text;
+using System.Data;
 
 namespace NetCoreOnionArchTemplate.Persistence.Services
 {
 	public class UserService : IUserService
 	{
 		private readonly UserManager<AppUser> _userManager;
-
-		public UserService(UserManager<AppUser> userManager)
+		private readonly IEndpointReadRepository _endpointReadRepository;
+		public UserService(UserManager<AppUser> userManager, IEndpointReadRepository endpointReadRepository)
 		{
 			_userManager = userManager;
+			_endpointReadRepository = endpointReadRepository;
 		}
 
 		public async Task<CreateUserResponse> CreateAsync(CreateUser model)
@@ -57,12 +61,90 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 			{
 				resetToken = resetToken.UrlDecode();
 
-				IdentityResult identityResult =  await _userManager.ResetPasswordAsync(user, resetToken, newPassword);
+				IdentityResult identityResult = await _userManager.ResetPasswordAsync(user, resetToken, newPassword);
 				if (identityResult.Succeeded)
 					await _userManager.UpdateSecurityStampAsync(user);
 				else
 					throw new PasswordChangeException();
 			}
+		}
+
+		public async Task<List<ListUser>> GetAllUsers(int page, int size)
+		{
+			List<AppUser>? userList = await _userManager.Users
+				.Skip(page * size)
+				.Take(size)
+				.ToListAsync();
+
+			return userList.Select(user => new ListUser
+			{
+				Id = user.Id,
+				Email = user.Email,
+				NameSurname = user.NameSurname,
+				UserName = user.UserName,
+				TwoFactorEnabled = user.TwoFactorEnabled
+			}).ToList();
+		}
+		public int TotalUsersCount => _userManager.Users.Count();
+
+		public async Task AssignRoleToUserAsync(string userId, string[] roles)
+		{
+			AppUser? user = await _userManager.FindByIdAsync(userId);
+			if (user != null)
+			{
+				var userRoles = await _userManager.GetRolesAsync(user);
+				await _userManager.RemoveFromRolesAsync(user, userRoles);
+
+				await _userManager.AddToRolesAsync(user, roles);
+			}
+		}
+
+		public async Task<string[]?> GetRolesToUser(string userIdOrName)
+		{
+			AppUser? user = new AppUser();
+			string[]? currentUserRoles = new string[] { };
+			try
+			{
+				user = await _userManager.FindByIdAsync(userIdOrName);
+
+			}
+			catch (ArgumentException ex)
+			{
+				user = await _userManager.FindByNameAsync(userIdOrName);
+			}
+			finally
+			{
+				if (user != null)
+				{
+					var userRoles = await _userManager.GetRolesAsync(user);
+					currentUserRoles = userRoles.ToArray();
+				}
+			}
+			return currentUserRoles;
+		}
+
+		public async Task<bool> HasRolePermissionToEndpointAsync(string name, string code)
+		{
+			var userRoles = await GetRolesToUser(name);
+
+			if (userRoles != null && !userRoles.Any()) return false;
+
+			Endpoint? endpoint = await _endpointReadRepository.Table
+				.Include(e => e.Roles)
+				.FirstOrDefaultAsync(e => e.Code == code);
+
+			if (endpoint == null) return false;
+
+			var endpointRoles = endpoint.Roles.Select(r => r.Name);
+
+			foreach (var userRole in userRoles)
+			{
+				foreach (var endpointRole in endpointRoles)
+					if (userRole == endpointRole)
+						return true;
+
+			}
+			return false;
 		}
 	}
 }
