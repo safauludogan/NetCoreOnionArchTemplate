@@ -4,8 +4,8 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.Product.DeleteP
 {
     public class DeleteProductCommandRequest : IRequest<DeleteProductCommandResponse>
     {
-        public int Id { get; set; }
-        public DeleteProductCommandRequest(int id)
+        public Guid Id { get; set; }
+        public DeleteProductCommandRequest(Guid id)
         {
             Id = id;
         }

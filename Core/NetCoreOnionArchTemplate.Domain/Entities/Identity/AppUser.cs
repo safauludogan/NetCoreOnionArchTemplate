@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace NetCoreOnionArchTemplate.Domain.Entities.Identity
 {
-    public class AppUser : IdentityUser<int>
+    public class AppUser : IdentityUser<Guid>
     {
         public string NameSurname { get; set; }
         public string? RefreshToken { get; set; }

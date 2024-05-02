@@ -25,7 +25,7 @@ namespace NetCoreOnionArchTemplate.Persistence.Repositories
             return query;
         }
 
-        public async Task<T> GetByIdAsync(int Id, bool tracking = true)
+        public async Task<T> GetByIdAsync(Guid Id, bool tracking = true)
         {
             var query = Table.AsQueryable();
             if (!tracking)

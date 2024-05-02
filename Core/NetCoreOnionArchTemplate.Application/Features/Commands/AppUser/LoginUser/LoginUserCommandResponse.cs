@@ -1,4 +1,5 @@
 ﻿using NetCoreOnionArchTemplate.Application.DTOs;
+using NetCoreOnionArchTemplate.Application.DTOs.User;
 
 namespace NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.LoginUser
 {
@@ -8,7 +9,7 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.LoginUs
 
     public class LoginUserSuccessCommandResponse : LoginUserCommandResponse
     {
-        public Token Token { get; set; }
+        public LoginUserResponse Response { get; set; }
 
     }
     public class LoginUserErrorCommandResponse : LoginUserCommandResponse

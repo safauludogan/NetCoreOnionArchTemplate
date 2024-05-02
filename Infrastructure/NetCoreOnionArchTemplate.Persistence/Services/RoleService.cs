@@ -21,7 +21,7 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 			return await _roleManager.Roles.Skip(page * size).Take(size).ToListAsync();
 		}
 
-		public async Task<(int id, string name)> GetRoleByIdAsync(int id)
+		public async Task<(Guid id, string name)> GetRoleByIdAsync(Guid id)
 		{
 			string? role = await _roleManager.GetRoleNameAsync(new() { Id = id });
 			return (id, role);
@@ -33,13 +33,13 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 			return result.Succeeded;
 		}
 
-		public async Task<bool> DeleteRoleAsync(int Id)
+		public async Task<bool> DeleteRoleAsync(Guid Id)
 		{
 			IdentityResult result = await _roleManager.DeleteAsync(new() { Id = Id });
 			return result.Succeeded;
 		}
 
-		public async Task<bool> UpdateRoleAsync(int id, string name)
+		public async Task<bool> UpdateRoleAsync(Guid id, string name)
 		{
 			IdentityResult result = await _roleManager.UpdateAsync(new() { Id = id, Name = name });
 			return result.Succeeded;

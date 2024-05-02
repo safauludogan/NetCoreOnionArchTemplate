@@ -5,9 +5,9 @@ namespace NetCoreOnionArchTemplate.Application.Abstractions.Services
 	public interface IRoleService
 	{
 		Task<List<AppRole>> GetAllRoles(int page, int size);
-		Task<(int id, string name)> GetRoleByIdAsync(int id);
+		Task<(Guid id, string name)> GetRoleByIdAsync(Guid id);
 		Task<bool> CreateRoleAsync(string name);
-		Task<bool> DeleteRoleAsync(int Id);
-		Task<bool> UpdateRoleAsync(int id,string name);
+		Task<bool> DeleteRoleAsync(Guid Id);
+		Task<bool> UpdateRoleAsync(Guid id,string name);
 	}
 }

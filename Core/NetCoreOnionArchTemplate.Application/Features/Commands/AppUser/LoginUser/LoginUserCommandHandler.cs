@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services;
+using NetCoreOnionArchTemplate.Application.DTOs.User;
 
 namespace NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.LoginUser
 {
@@ -13,10 +14,10 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.LoginUs
 
         public async Task<LoginUserCommandResponse> Handle(LoginUserCommandRequest request, CancellationToken cancellationToken)
         {
-            var token = await _authService.LoginAsync(request.UsernameOrEmail, request.Password, 10000, 51000);
+            LoginUserResponse response = await _authService.LoginAsync(request.UsernameOrEmail, request.Password, 10000, 51000);
             return new LoginUserSuccessCommandResponse()
             {
-                Token = token
+                Response = response
             };
         }
     }

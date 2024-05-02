@@ -4,9 +4,9 @@ namespace NetCoreOnionArchTemplate.Application.Features.Queries.Product.GetProdu
 {
     public class GetProductByIdQueryRequest : IRequest<GetProductByIdQueryResponse>
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
-        public GetProductByIdQueryRequest(int id)
+        public GetProductByIdQueryRequest(Guid id)
         {
             Id = id;
         }

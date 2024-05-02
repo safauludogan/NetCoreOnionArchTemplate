@@ -10,7 +10,7 @@ namespace NetCoreOnionArchTemplate.Application.Repositories
         bool UpdateRange(List<T> datas);
         bool Remove(T model);
         bool RemoveRange(List<T> datas);
-        Task<bool> RemoveAsync(int Id);
+        Task<bool> RemoveAsync(Guid Id);
         Task<int> SaveAsync();
     }
 }

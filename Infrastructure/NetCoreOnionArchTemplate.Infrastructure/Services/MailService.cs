@@ -44,7 +44,7 @@ namespace NetCoreOnionArchTemplate.Infrastructure.Services
 			}
 		}
 
-		public async Task SendPasswordResetMailAsync(string to, int userId, string resetToken)
+		public async Task SendPasswordResetMailAsync(string to, Guid userId, string resetToken)
 		{
 			StringBuilder mail = new();
 			mail.AppendLine("Merhaba,<br>");

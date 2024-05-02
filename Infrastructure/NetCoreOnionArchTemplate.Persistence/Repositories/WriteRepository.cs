@@ -40,7 +40,7 @@ namespace NetCoreOnionArchTemplate.Persistence.Repositories
             Table.RemoveRange(datas);
             return true;
         }
-        public async Task<bool> RemoveAsync(int Id)
+        public async Task<bool> RemoveAsync(Guid Id)
         {
             T result = await Table.FirstOrDefaultAsync(x => x.Id == Id);
             return Remove(result);

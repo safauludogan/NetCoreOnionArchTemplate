@@ -36,7 +36,7 @@ namespace NetCoreOnionArchTemplate.API.Controllers
 
 		[HttpGet("[action]/{id}")]
 		[AuthorizeDefinition(Menu = AuthorizeDefinitionConstants.Products, ActionType = ActionType.Reading, Definition = "Get Product ById")]
-		public async Task<IActionResult> GetProductById(int id)
+		public async Task<IActionResult> GetProductById(Guid id)
 		{
 			return Ok(await _mediator.Send(new GetProductByIdQueryRequest(id)));
 		}
@@ -57,7 +57,7 @@ namespace NetCoreOnionArchTemplate.API.Controllers
 		[HttpDelete("[action]/{id}")]
 		[AuthorizeDefinition(Menu = AuthorizeDefinitionConstants.Products, ActionType = ActionType.Deleting
 			, Definition = "Delete Product")]
-		public async Task<IActionResult> DeleteProduct(int id)
+		public async Task<IActionResult> DeleteProduct(Guid id)
 		{
 			return Ok((await _mediator.Send(new DeleteProductCommandRequest(id))).IsSuccess);
 		}

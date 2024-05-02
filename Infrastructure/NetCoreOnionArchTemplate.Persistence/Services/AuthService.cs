@@ -1,13 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services;
 using NetCoreOnionArchTemplate.Application.Abstractions.Token;
 using NetCoreOnionArchTemplate.Application.DTOs;
+using NetCoreOnionArchTemplate.Application.DTOs.User;
 using NetCoreOnionArchTemplate.Application.Exceptions;
 using NetCoreOnionArchTemplate.Application.Helpers;
 using NetCoreOnionArchTemplate.Domain.Entities.Identity;
-using System.Text;
 
 namespace NetCoreOnionArchTemplate.Persistence.Services
 {
@@ -29,7 +28,7 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 			_mailService = mailService;
 		}
 
-		public async Task<Token> LoginAsync(string usernameOrEmail, string password, int accessTokenLifeTime, int addOnAccessTokenDate)
+		public async Task<LoginUserResponse> LoginAsync(string usernameOrEmail, string password, int accessTokenLifeTime, int addOnAccessTokenDate)
 		{
 			AppUser user = await _userManager.FindByNameAsync(usernameOrEmail);
 			if (user == null)
@@ -44,8 +43,12 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 			{
 				Token token = _tokenHandler.CreateAccessToken(accessTokenLifeTime, user);
 				await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.Expiration, addOnAccessTokenDate);
-				return token;
-			}
+                return new LoginUserResponse
+                {
+                    Token = token,
+                    User = user
+                };
+            }
 			throw new AuthenticationErrorException();
 		}
 		public Task<Token> FacebookLoginAsync(string authToken)
