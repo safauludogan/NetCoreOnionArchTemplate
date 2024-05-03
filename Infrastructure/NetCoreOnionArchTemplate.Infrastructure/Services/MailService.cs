@@ -46,21 +46,20 @@ namespace NetCoreOnionArchTemplate.Infrastructure.Services
 
 		public async Task SendPasswordResetMailAsync(string to, Guid userId, string resetToken)
 		{
-			StringBuilder mail = new();
-			mail.AppendLine("Merhaba,<br>");
-			mail.AppendLine("Eğer yeni şifre talebinde bulunduysanız aşağıdaki linkten şifrenizi yenileyebilirsiniz:<br>");
-			mail.AppendLine("<strong><a target=\"_blank\" href=\"");
-			mail.Append(_configuration["ClientUrl"]);
-			mail.Append("/update-password/");
-			mail.Append(userId.ToString());
-			mail.Append("/");
-			mail.Append(resetToken);
-			mail.AppendLine("\">Yeni şifre talebi için tıklayınız...</a></strong><br><br>");
-			mail.AppendLine("<span style=\"font-size:12px;\">NOT : Eğer ki bu talep tarafınızca gerçekleştirilmemişse lütfen bu maili ciddiye almayınız.</span><br>");
-			mail.AppendLine("Saygılarımızla...<br><br><br>VibeBilişim");
+            StringBuilder mail = new StringBuilder();
+            mail.AppendLine("Merhaba,<br>");
+            mail.AppendLine("Eğer yeni şifre talebinde bulunduysanız aşağıdaki linkten şifrenizi yenileyebilirsiniz:<br>");
+            mail.AppendLine("<strong><a target=\"_blank\" href=\"");
+            mail.Append(_configuration["ClientUrl"]);
+            mail.Append("/update-password/{userId}/{resetToken}");
+            mail.Replace("{userId}", userId.ToString());
+            mail.Replace("{resetToken}", resetToken);
+            mail.AppendLine("\">Yeni şifre talebi için tıklayınız...</a></strong><br><br>");
+            mail.AppendLine("<span style=\"font-size:12px;\">NOT : Eğer ki bu talep tarafınızca gerçekleştirilmemişse lütfen bu maili ciddiye almayınız.</span><br>");
+            mail.AppendLine("Saygılarımızla...<br><br><br>VibeBilişim");
 
-			await SendMailAsync(to, "Şifre Yenileme Talebi", mail.ToString());
+            await SendMailAsync(to, "Şifre Yenileme Talebi", mail.ToString());
 
-		}
+        }
 	}
 }
