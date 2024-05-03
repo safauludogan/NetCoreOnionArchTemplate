@@ -2,5 +2,6 @@
 {
 	public class UpdatePasswordCommandResponse
 	{
-	}
+        public bool IsSuccess { get; set; }
+    }
 }

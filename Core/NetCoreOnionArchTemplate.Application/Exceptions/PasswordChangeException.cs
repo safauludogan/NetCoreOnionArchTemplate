@@ -2,8 +2,8 @@
 {
 	public class PasswordChangeException : Exception
 	{
-		public PasswordChangeException() : base("Şifre güncellenirken bir sorun oluştu.")
-		{
+		public PasswordChangeException() : base("Şifre güncellenirken bir sorun oluştu. Link'in süresi dolmuş olabilir.")
+        {
 		}
 
 		public PasswordChangeException(string? message) : base(message)

@@ -7,7 +7,7 @@ namespace NetCoreOnionArchTemplate.Application.Abstractions.Services
     {
         Task<CreateUserResponse> CreateAsync(CreateUser model);
         Task UpdateRefreshTokenAsync(string refreshToken, AppUser user, DateTime accessTokenDate, int refreshTokenLifeTime);
-        Task UpdatePasswordAsync(string userId, string resetToken, string newPassword);
+        Task<bool> UpdatePasswordAsync(string userId, string resetToken, string newPassword);
         Task<List<ListUser>> GetAllUsers(int page, int size);
         Task<bool> HasRolePermissionToEndpointAsync(string name, string code);
         int TotalUsersCount { get; }

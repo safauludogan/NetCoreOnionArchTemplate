@@ -18,8 +18,8 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.UpdateP
 			if (!request.Password.Equals(request.PasswordConfirm))
 				throw new PasswordChangeException("Şifreler uyuşmuyor");
 
-			await _userService.UpdatePasswordAsync(request.UserId, request.ResetToken, request.Password);
-			return new();
-		}
+            var result = await _userService.UpdatePasswordAsync(request.UserId, request.ResetToken, request.Password);
+            return new UpdatePasswordCommandResponse { IsSuccess = result };
+        }
 	}
 }
