@@ -30,7 +30,7 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 
 		public async Task<LoginUserResponse> LoginAsync(string usernameOrEmail, string password, int accessTokenLifeTime, int addOnAccessTokenDate)
 		{
-			AppUser user = await _userManager.FindByNameAsync(usernameOrEmail);
+			AppUser? user = await _userManager.FindByNameAsync(usernameOrEmail);
 			if (user == null)
 				user = await _userManager.FindByEmailAsync(usernameOrEmail);
 
@@ -49,8 +49,11 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
                     User = user
                 };
             }
-			throw new AuthenticationErrorException();
-		}
+            var isEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
+            if (!isEmailConfirmed)
+                throw new EmailConfirmException();
+            throw new AuthenticationErrorException();
+        }
 		public Task<Token> FacebookLoginAsync(string authToken)
 		{
 			throw new NotImplementedException();
