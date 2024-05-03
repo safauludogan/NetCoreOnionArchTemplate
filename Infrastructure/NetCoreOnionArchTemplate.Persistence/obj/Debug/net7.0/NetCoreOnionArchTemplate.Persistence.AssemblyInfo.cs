@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NetCoreOnionArchTemplate.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0909f63cd721fc8cb052cbee757b774f275c45a6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8511f9fdf1a0584ca36e12af77ece7ceb483d94")]
 [assembly: System.Reflection.AssemblyProductAttribute("NetCoreOnionArchTemplate.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NetCoreOnionArchTemplate.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
