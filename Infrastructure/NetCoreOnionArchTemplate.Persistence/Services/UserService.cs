@@ -54,7 +54,7 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 				throw new NotFoundUserException();
 		}
 
-		public async Task UpdatePasswordAsync(string userId, string resetToken, string newPassword)
+		public async Task<bool> UpdatePasswordAsync(string userId, string resetToken, string newPassword)
 		{
 			AppUser? user = await _userManager.FindByIdAsync(userId);
 			if (user != null)
@@ -63,11 +63,15 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 
 				IdentityResult identityResult = await _userManager.ResetPasswordAsync(user, resetToken, newPassword);
 				if (identityResult.Succeeded)
-					await _userManager.UpdateSecurityStampAsync(user);
-				else
+                {
+                    var result = await _userManager.UpdateSecurityStampAsync(user);
+                    return result.Succeeded;
+                }
+                else
 					throw new PasswordChangeException();
 			}
-		}
+            return false;
+        }
 
 		public async Task<List<ListUser>> GetAllUsers(int page, int size)
 		{
