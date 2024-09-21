@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MeCZ4uYzlaZr2jsvTX32C5z24AypQK+8u/JoG+wGkaWzKcvOaE/zBY2RlGxz+J9jubipHKUbNbPBkGZlUffypw==",
+  "dgSpecHash": "IWGDC/UbOpT6cB8Dlbrm+Nn6gzeAa3At64cOXIdRuTOUK1bAxZBl5UnMcg4wtmvyMNTpGf2G44386J6hbLd2ug==",
   "success": true,
-  "projectFilePath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
+  "projectFilePath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asus\\.nuget\\packages\\fluentvalidation\\11.8.1\\fluentvalidation.11.8.1.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",

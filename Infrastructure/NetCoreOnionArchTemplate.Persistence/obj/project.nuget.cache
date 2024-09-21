@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kcKU2Q+TiLqjBhixcW8Fhfi5cX6nVL+0yEoCh5HSSmBcwptG+zOjQ+DIGlyz1L79z/WAnux466PCJ8OoaC875w==",
+  "dgSpecHash": "lMNPG85au16i8exKskwlZcGhqMQrNk8w9DPZmvEP25zN71N8Ct4H+7BcgmCP50LYfXgoKfKblFHCNvBdKACVYw==",
   "success": true,
-  "projectFilePath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj",
+  "projectFilePath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asus\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

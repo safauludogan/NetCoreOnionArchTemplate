@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OCW8alYY3YbJgyAfUPmxy6602eo86NreHC4PHl4lMU8WDH3ymdkkJN1kgypSUzGvDrWcdiiQix1QhCIhuSqKDw==",
+  "dgSpecHash": "ysQwEQgf7aL4zplTNcPHsgie9lhbEWL1TZQWhlAwdJvceYbEDuBKzX6ElML17zOUV5b52LOD40OGesK4T15dwQ==",
   "success": true,
-  "projectFilePath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj",
+  "projectFilePath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.1.1\\microsoft.aspnetcore.authentication.2.1.1.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.1.1\\microsoft.aspnetcore.authentication.abstractions.2.1.1.nupkg.sha512",

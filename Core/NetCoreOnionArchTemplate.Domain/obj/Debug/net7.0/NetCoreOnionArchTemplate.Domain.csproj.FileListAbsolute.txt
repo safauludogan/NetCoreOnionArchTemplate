@@ -37,3 +37,16 @@ D:\WORK\code\.net\my_projects\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemp
 D:\WORK\code\.net\my_projects\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\refint\NetCoreOnionArchTemplate.Domain.dll
 D:\WORK\code\.net\my_projects\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.pdb
 D:\WORK\code\.net\my_projects\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\ref\NetCoreOnionArchTemplate.Domain.dll
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\bin\Debug\net7.0\NetCoreOnionArchTemplate.Domain.deps.json
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\bin\Debug\net7.0\NetCoreOnionArchTemplate.Domain.dll
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\bin\Debug\net7.0\NetCoreOnionArchTemplate.Domain.pdb
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.csproj.AssemblyReference.cache
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.AssemblyInfoInputs.cache
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.AssemblyInfo.cs
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.csproj.CoreCompileInputs.cache
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.sourcelink.json
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.dll
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\refint\NetCoreOnionArchTemplate.Domain.dll
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\NetCoreOnionArchTemplate.Domain.pdb
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Core\NetCoreOnionArchTemplate.Domain\obj\Debug\net7.0\ref\NetCoreOnionArchTemplate.Domain.dll

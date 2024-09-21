@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj": {}
+    "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj": {}
   },
   "projects": {
-    "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
+    "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
+        "projectUniqueName": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
         "projectName": "NetCoreOnionArchTemplate.Application",
-        "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
+        "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\obj\\",
+        "outputPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj": {
-                "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj"
+              "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj": {
+                "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj"
               }
             }
           }
@@ -94,14 +94,14 @@
         }
       }
     },
-    "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj": {
+    "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj",
+        "projectUniqueName": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj",
         "projectName": "NetCoreOnionArchTemplate.Domain",
-        "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj",
+        "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\obj\\",
+        "outputPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -164,14 +164,14 @@
         }
       }
     },
-    "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj": {
+    "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj",
+        "projectUniqueName": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj",
         "projectName": "NetCoreOnionArchTemplate.Infrastructure",
-        "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj",
+        "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\obj\\",
+        "outputPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -188,8 +188,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
-                "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
+              "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
+                "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
               }
             }
           }
@@ -234,14 +234,14 @@
         }
       }
     },
-    "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj": {
+    "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj",
+        "projectUniqueName": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj",
         "projectName": "NetCoreOnionArchTemplate.Persistence",
-        "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj",
+        "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\obj\\",
+        "outputPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -258,8 +258,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
-                "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
+              "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
+                "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
               }
             }
           }
@@ -326,14 +326,14 @@
         }
       }
     },
-    "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.SignalR\\NetCoreOnionArchTemplate.SignalR.csproj": {
+    "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.SignalR\\NetCoreOnionArchTemplate.SignalR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.SignalR\\NetCoreOnionArchTemplate.SignalR.csproj",
+        "projectUniqueName": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.SignalR\\NetCoreOnionArchTemplate.SignalR.csproj",
         "projectName": "NetCoreOnionArchTemplate.SignalR",
-        "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.SignalR\\NetCoreOnionArchTemplate.SignalR.csproj",
+        "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.SignalR\\NetCoreOnionArchTemplate.SignalR.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.SignalR\\obj\\",
+        "outputPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.SignalR\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -350,8 +350,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
-                "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
+              "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
+                "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
               }
             }
           }
@@ -396,14 +396,14 @@
         }
       }
     },
-    "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj": {
+    "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj",
+        "projectUniqueName": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj",
         "projectName": "NetCoreOnionArchTemplate.API",
-        "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj",
+        "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\obj\\",
+        "outputPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -420,17 +420,17 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
-                "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
+              "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
+                "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
               },
-              "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj": {
-                "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj"
+              "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj": {
+                "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj"
               },
-              "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj": {
-                "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj"
+              "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj": {
+                "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj"
               },
-              "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.SignalR\\NetCoreOnionArchTemplate.SignalR.csproj": {
-                "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.SignalR\\NetCoreOnionArchTemplate.SignalR.csproj"
+              "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.SignalR\\NetCoreOnionArchTemplate.SignalR.csproj": {
+                "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.SignalR\\NetCoreOnionArchTemplate.SignalR.csproj"
               }
             }
           }

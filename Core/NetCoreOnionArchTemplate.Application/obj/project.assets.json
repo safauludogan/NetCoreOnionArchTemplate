@@ -2071,11 +2071,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
+      "projectUniqueName": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
       "projectName": "NetCoreOnionArchTemplate.Application",
-      "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
+      "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
       "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\obj\\",
+      "outputPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2092,8 +2092,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj": {
-              "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj"
+            "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj": {
+              "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Domain\\NetCoreOnionArchTemplate.Domain.csproj"
             }
           }
         }

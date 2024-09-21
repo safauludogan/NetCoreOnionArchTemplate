@@ -17,124 +17,73 @@ using Serilog.Context;
 using NetCoreOnionArchTemplate.API.Extensions;
 using NetCoreOnionArchTemplate.SignalR;
 using NetCoreOnionArchTemplate.API.Filters;
+using NetCoreOnionArchTemplate.API.Utility;
+using NetCoreOnionArchTemplate.API;
+using NetCoreOnionArchTemplate.Application.Consts;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHttpContextAccessor();//Client'tan gelen request neticesinde oluşturulan HttpContext nesnesine katmanlardaki class'lar üzerinden erişebilmemizi sağlar.
 
-builder.Services.AddPersistanceServices();
+builder.Services.AddPersistanceServices(builder.Configuration);
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices();
 builder.Services.AddSignalRServices();
+builder.Services.AppApi(builder.Configuration);
 
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
 //policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()
-policy.WithOrigins("http://localhost.7285", "https://localhost.7285")
+policy.WithOrigins("http://localhost.5001", "https://localhost.5001")
 .AllowAnyHeader()
 .AllowAnyMethod()
 .AllowCredentials()
 ));
 
 
-Logger log = new LoggerConfiguration()
-	.WriteTo.Console()
-	.WriteTo.File("logs/log.txt")
-	.WriteTo.MSSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), "logs", autoCreateSqlTable: true,
+#region Logger
+Logger log = new ProjectLogger(builder.Configuration).CreateLogger();
 
-		columnOptions: new ColumnOptions
-		{
-			AdditionalColumns = new Collection<SqlColumn>
-			{
-                //new(){ColumnName = "LogEvent",DataType = SqlDbType.NVarChar},
-                new(){ColumnName = "Username",DataType = SqlDbType.NVarChar}
-			}
-		})
-	.Enrich.FromLogContext()
-	.MinimumLevel.Information()
-	.CreateLogger();
+// Varsayılan log sağlayıcılarını temizle
+builder.Logging.ClearProviders();
 
 builder.Host.UseSerilog(log);
+#endregion
 
 builder.Services.AddControllers(options =>
 {
 	options.Filters.Add<RolePermissionFilter>();
-})
-	.AddFluentValidation(configuration => configuration.RegisterValidatorsFromAssemblyContaining<CreateProductValidator>());
+});
 
 builder.Services.AddEndpointsApiExplorer();
-#region Swagger
-builder.Services.AddSwaggerGen(gen =>
-{
-	var securityScheme = new OpenApiSecurityScheme
-	{
-		Name = "JWT Authentication",
-		Description = "Jwt Bearer Token **_only_**",
-		In = ParameterLocation.Header,
-		Type = SecuritySchemeType.Http,
-		Scheme = "bearer",
-		BearerFormat = "JWT",
-		Reference = new OpenApiReference
-		{
-			Id = JwtBearerDefaults.AuthenticationScheme,
-			Type = ReferenceType.SecurityScheme
-		}
-	};
 
-	var vibeBilisimLink = "http://vibebilisim.com/";
+#region Project Environments
+var env = builder.Environment;
 
-	gen.SwaggerDoc("v1", new OpenApiInfo
-	{
-		Title = "NetCoreArch Wep Api",
-		Version = "v1",
-		License = new OpenApiLicense
-		{
-			Name = "Powered by VibeBilisim",
-			Url = new Uri(vibeBilisimLink),
-		},
-		Contact = new OpenApiContact
-		{
-			Name = "Safa Uludoğan",
-			Email = "safa.uludogan@vibebilisim.com.tr"
-		},
+builder.Configuration
+	.SetBasePath(env.ContentRootPath)
+     .AddJsonFile("appsettings.json", optional: false)
+     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
-
-	});
-
-	gen.AddSecurityDefinition(securityScheme.Reference.Id, securityScheme);
-	gen.AddSecurityRequirement(new OpenApiSecurityRequirement
-	{
-					{securityScheme, Array.Empty<string>()}
-				});
-
-});
 #endregion
-
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-	.AddJwtBearer("Admin", opt =>
-	{
-		opt.TokenValidationParameters = new()
-		{
-			ValidateAudience = true, // Oluşturulacak token değerinin kimlerin/hangi originlerin/sitelerin kullanıcı belirlediğimiz değerdir.
-			ValidateIssuer = true, // Oluşturulacak token değerinin kimin dağıttığını ifade edeceğimiz alan
-			ValidateLifetime = true, // Oluşturulan token değerinin süresini kontrol edecek olan doğrulama
-			ValidateIssuerSigningKey = true, // Üretilecek token değerinin uygulamamıza ait bir değer olduğunu ifade eden suciry key verisinin doğrulamasıdır.
-
-			ValidAudience = builder.Configuration["Token:Audience"],
-			ValidIssuer = builder.Configuration["Token:Issuer"],
-			IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"])),
-			LifetimeValidator = (notBefore, expires, securityToken, validationParameters) => expires != null ? expires > DateTime.UtcNow : false,
-
-			NameClaimType = ClaimTypes.Name //JWT üzerinde Name claimne karşılık gelen değeri User.Identity.Name propertysinden elde edebiliriz.
-		};
-	});
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())// Hata kodlarını yakalamak için.
 {
-	app.UseSwagger();
-	app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
 }
+else
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
+
+//if (app.Environment.IsDevelopment())
+//{
+app.UseSwagger();
+app.UseSwaggerUI();
+//}
+
 app.ConfigureExceptionHandler(app.Services.GetRequiredService<ILogger<Program>>());
 app.UseSerilogRequestLogging();
 
@@ -147,9 +96,14 @@ app.UseAuthorization();
 
 app.Use(async (context, next) =>
 {
-	var username = context.User?.Identity?.IsAuthenticated != null || true ? context.User.Identity.Name : null;
-	LogContext.PushProperty("Username", username);
-	await next();
+    var email = context.User?.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+    if (string.IsNullOrEmpty(email) || context.User?.Identity?.IsAuthenticated == null)
+    {
+        email = "Anonymous"; // Eğer email bulunamazsa varsayılan bir değer atayabilirsiniz.
+    }
+
+    LogContext.PushProperty(LoggerProperties.email, email);
+    await next();
 });
 
 app.MapControllers();

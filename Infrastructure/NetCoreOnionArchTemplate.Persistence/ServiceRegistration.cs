@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services;
 using NetCoreOnionArchTemplate.Application.Repositories;
@@ -13,9 +14,9 @@ namespace NetCoreOnionArchTemplate.Persistence
     public static class ServiceRegistration
     {
         //Connection String: https://www.connectionstrings.com/
-        public static void AddPersistanceServices(this IServiceCollection services)
+        public static void AddPersistanceServices(this IServiceCollection services,IConfiguration configuration)
         {
-            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.ConnectionString));
+            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<AppUser, AppRole>(options =>
             {
                 options.Password.RequiredLength = 3;

@@ -29,7 +29,7 @@ namespace NetCoreOnionArchTemplate.Infrastructure.Services.Configuration
 							var attributes = action.GetCustomAttributes(true);
 							if (attributes != null)
 							{
-								Menu menu = null;
+								Menu? menu = null;
 								var authorizeDefinitionAttribute = attributes.FirstOrDefault(a => a.GetType() == typeof(AuthorizeDefinitionAttribute)) as AuthorizeDefinitionAttribute;
 								if (!menus.Any(m => m.Name == authorizeDefinitionAttribute.Menu))
 								{

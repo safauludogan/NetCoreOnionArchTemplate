@@ -36,7 +36,7 @@ namespace NetCoreOnionArchTemplate.Infrastructure.Services.Token
                 expires: token.Expiration,
                 notBefore: DateTime.UtcNow,
                 signingCredentials: signingCredentials,
-                claims:  new List<Claim> { new(ClaimTypes.Name, user.UserName) }
+                 claims: new List<Claim> { new(ClaimTypes.Email, user.Email) }
                 );
 
             //Token oluşturucu sınıfından bir örnek alalım.

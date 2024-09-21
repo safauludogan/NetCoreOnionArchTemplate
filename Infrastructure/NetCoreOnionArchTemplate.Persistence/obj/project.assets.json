@@ -4423,11 +4423,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj",
+      "projectUniqueName": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj",
       "projectName": "NetCoreOnionArchTemplate.Persistence",
-      "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj",
+      "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\NetCoreOnionArchTemplate.Persistence.csproj",
       "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-      "outputPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\obj\\",
+      "outputPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Persistence\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4444,8 +4444,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
-              "projectPath": "D:\\WORK\\code\\.net\\my_projects\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
+            "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
+              "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
             }
           }
         }
