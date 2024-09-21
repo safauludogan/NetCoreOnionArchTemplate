@@ -6,7 +6,7 @@ using NetCoreOnionArchTemplate.Persistence.Context;
 
 namespace NetCoreOnionArchTemplate.Persistence.Repositories
 {
-    public class WriteRepository<T> : IWriteRepository<T> where T : BaseEntity
+    public class WriteRepository<T> : IWriteRepository<T> where T : BaseEntity, IEntityBase, new()
     {
 
         private readonly DataContext _context;

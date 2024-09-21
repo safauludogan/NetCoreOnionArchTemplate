@@ -2,7 +2,7 @@
 
 namespace NetCoreOnionArchTemplate.Application.Repositories
 {
-    public interface IWriteRepository<T> : IRepository<T> where T : BaseEntity
+    public interface IWriteRepository<T> : IRepository<T> where T : BaseEntity, IEntityBase, new()
     {
         Task<bool> AddAsync(T model);
         Task<bool> AddRangeAsync(List<T> datas);

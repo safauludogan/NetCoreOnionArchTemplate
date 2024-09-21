@@ -26,7 +26,7 @@ namespace NetCoreOnionArchTemplate.Persistence
                 options.Password.RequireUppercase = false;
             }).AddEntityFrameworkStores<DataContext>()
             .AddDefaultTokenProviders();
-            
+
             services.AddScoped<ICustomerReadRepository, CustomerReadRepository>();
             services.AddScoped<ICustomerWriteRepository, CustomerWriteRepository>();
             services.AddScoped<IOrderReadRepository, OrderReadRepository>();

@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace NetCoreOnionArchTemplate.Persistence.Repositories
 {
-    public class ReadRepository<T> : IReadRepository<T> where T : BaseEntity
+    public class ReadRepository<T> : IReadRepository<T> where T : BaseEntity, IEntityBase, new()
     {
         private readonly DataContext _context;
 
@@ -25,7 +25,15 @@ namespace NetCoreOnionArchTemplate.Persistence.Repositories
             return query;
         }
 
-        public async Task<T> GetByIdAsync(Guid Id, bool tracking = true)
+        public IQueryable<T> GetAllByPaging(bool tracking = true, int currentPage = 1, int pageSize = 3)
+        {
+            var query = Table.AsQueryable();
+            if (!tracking)
+                query = query.AsNoTracking();
+            return query.Skip((currentPage - 1) * pageSize).Take(pageSize);
+        }
+
+        public async Task<T?> GetByIdAsync(Guid Id, bool tracking = true)
         {
             var query = Table.AsQueryable();
             if (!tracking)
@@ -34,7 +42,7 @@ namespace NetCoreOnionArchTemplate.Persistence.Repositories
         }
 
 
-        public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true)
+        public async Task<T?> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true)
         {
             var query = Table.AsQueryable();
             if (!tracking)
@@ -49,6 +57,11 @@ namespace NetCoreOnionArchTemplate.Persistence.Repositories
                 query = query.AsNoTracking();
             return query;
         }
-
+        public async Task<int> CountAsync(Expression<Func<T, bool>>? method = null)
+        {
+            var query = Table.AsQueryable().AsNoTracking();
+            if (method != null) query = query.Where(method);
+            return await query.CountAsync();
+        }
     }
 }

@@ -12,7 +12,6 @@ namespace NetCoreOnionArchTemplate.Infrastructure
     {
         public static void AddInfrastructureServices(this IServiceCollection services)
         {
-
             services.AddScoped<ITokenHandler, TokenHandler>();
             services.AddScoped<IMailService, MailService>();
             services.AddScoped<IApplicationService, ApplicationService>();
