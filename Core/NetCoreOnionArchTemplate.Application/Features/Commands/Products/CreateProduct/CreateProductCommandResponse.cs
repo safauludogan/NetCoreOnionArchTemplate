@@ -1,4 +1,4 @@
-﻿namespace NetCoreOnionArchTemplate.Application.Features.Commands.Product.CreateProduct
+﻿namespace NetCoreOnionArchTemplate.Application.Features.Commands.Products.CreateProduct
 {
     public class CreateProductCommandResponse
     {

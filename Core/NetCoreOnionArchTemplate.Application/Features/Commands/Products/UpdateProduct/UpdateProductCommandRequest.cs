@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace NetCoreOnionArchTemplate.Application.Features.Commands.Product.UpdateProduct
+namespace NetCoreOnionArchTemplate.Application.Features.Commands.Products.UpdateProduct
 {
     public class UpdateProductCommandRequest : IRequest<UpdateProductCommandResponse>
     {

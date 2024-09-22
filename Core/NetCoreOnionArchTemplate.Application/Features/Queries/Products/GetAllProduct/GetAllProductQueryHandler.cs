@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using NetCoreOnionArchTemplate.Application.Repositories;
 
-namespace NetCoreOnionArchTemplate.Application.Features.Queries.Product.GetAllProduct
+namespace NetCoreOnionArchTemplate.Application.Features.Queries.Products.GetAllProduct
 {
     public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQueryRequest, GetAllProductQueryResponse>
     {

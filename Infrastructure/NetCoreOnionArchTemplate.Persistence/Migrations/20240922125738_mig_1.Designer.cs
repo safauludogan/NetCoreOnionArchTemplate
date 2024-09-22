@@ -12,7 +12,7 @@ using NetCoreOnionArchTemplate.Persistence.Context;
 namespace NetCoreOnionArchTemplate.Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240503130535_mig_1")]
+    [Migration("20240922125738_mig_1")]
     partial class mig_1
     {
         /// <inheritdoc />
@@ -152,6 +152,9 @@ namespace NetCoreOnionArchTemplate.Persistence.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -188,6 +191,9 @@ namespace NetCoreOnionArchTemplate.Persistence.Migrations
                     b.Property<string>("HttpType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<Guid>("MenuId")
                         .HasColumnType("uniqueidentifier");
@@ -315,6 +321,9 @@ namespace NetCoreOnionArchTemplate.Persistence.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -347,6 +356,9 @@ namespace NetCoreOnionArchTemplate.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
 
@@ -365,6 +377,9 @@ namespace NetCoreOnionArchTemplate.Persistence.Migrations
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()

@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using NetCoreOnionArchTemplate.Application.Features.Commands.Product.CreateProduct;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Products.CreateProduct;
 
 namespace NetCoreOnionArchTemplate.Application.Validators.Products
 {

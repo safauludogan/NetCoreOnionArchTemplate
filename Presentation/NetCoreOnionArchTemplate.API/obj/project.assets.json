@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "AutoMapper/13.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Azure.Core/1.35.0": {
         "type": "package",
         "dependencies": {
@@ -2381,6 +2397,20 @@
           "bin/placeholder/NetCoreOnionArchTemplate.Infrastructure.dll": {}
         }
       },
+      "NetCoreOnionArchTemplate.Mapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "NetCoreOnionArchTemplate.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Mapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NetCoreOnionArchTemplate.Mapper.dll": {}
+        }
+      },
       "NetCoreOnionArchTemplate.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -2416,6 +2446,21 @@
     }
   },
   "libraries": {
+    "AutoMapper/13.0.1": {
+      "sha512": "/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
+      "type": "package",
+      "path": "automapper/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.13.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net6.0/AutoMapper.dll",
+        "lib/net6.0/AutoMapper.xml"
+      ]
+    },
     "Azure.Core/1.35.0": {
       "sha512": "hENcx03Jyuqv05F4RBEPbxz29UrM3Nbhnr6Wl6NQpoU9BCIbL3XLentrxDCTrH54NLS11Exxi/o8MYgT/cnKFA==",
       "type": "package",
@@ -6178,6 +6223,11 @@
       "path": "../../Infrastructure/NetCoreOnionArchTemplate.Infrastructure/NetCoreOnionArchTemplate.Infrastructure.csproj",
       "msbuildProject": "../../Infrastructure/NetCoreOnionArchTemplate.Infrastructure/NetCoreOnionArchTemplate.Infrastructure.csproj"
     },
+    "NetCoreOnionArchTemplate.Mapper/1.0.0": {
+      "type": "project",
+      "path": "../../Core/NetCoreOnionArchTemplate.Mapper/NetCoreOnionArchTemplate.Mapper.csproj",
+      "msbuildProject": "../../Core/NetCoreOnionArchTemplate.Mapper/NetCoreOnionArchTemplate.Mapper.csproj"
+    },
     "NetCoreOnionArchTemplate.Persistence/1.0.0": {
       "type": "project",
       "path": "../../Infrastructure/NetCoreOnionArchTemplate.Persistence/NetCoreOnionArchTemplate.Persistence.csproj",
@@ -6196,6 +6246,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 7.0.18",
       "NetCoreOnionArchTemplate.Application >= 1.0.0",
       "NetCoreOnionArchTemplate.Infrastructure >= 1.0.0",
+      "NetCoreOnionArchTemplate.Mapper >= 1.0.0",
       "NetCoreOnionArchTemplate.Persistence >= 1.0.0",
       "NetCoreOnionArchTemplate.SignalR >= 1.0.0",
       "Serilog >= 3.1.1",
@@ -6234,6 +6285,9 @@
           "projectReferences": {
             "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj": {
               "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj"
+            },
+            "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Mapper\\NetCoreOnionArchTemplate.Mapper.csproj": {
+              "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Mapper\\NetCoreOnionArchTemplate.Mapper.csproj"
             },
             "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj": {
               "projectPath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Infrastructure\\NetCoreOnionArchTemplate.Infrastructure\\NetCoreOnionArchTemplate.Infrastructure.csproj"

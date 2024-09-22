@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using NetCoreOnionArchTemplate.Application.Consts;
 using NetCoreOnionArchTemplate.Application.CustomAttributes;
 using NetCoreOnionArchTemplate.Application.Enums;
-using NetCoreOnionArchTemplate.Application.Features.Commands.Product.CreateProduct;
-using NetCoreOnionArchTemplate.Application.Features.Commands.Product.DeleteProduct;
-using NetCoreOnionArchTemplate.Application.Features.Commands.Product.UpdateProduct;
-using NetCoreOnionArchTemplate.Application.Features.Queries.Product.GetAllProduct;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Products.CreateProduct;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Products.DeleteProduct;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Products.UpdateProduct;
+using NetCoreOnionArchTemplate.Application.Features.Queries.Products.GetAllProduct;
 using NetCoreOnionArchTemplate.Application.Features.Queries.Product.GetProductById;
 using NetCoreOnionArchTemplate.Application.RequestParameters;
 

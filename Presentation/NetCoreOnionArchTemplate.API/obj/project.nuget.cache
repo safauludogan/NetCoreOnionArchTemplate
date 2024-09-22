@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "x7ud4FSVqn7TH5G0FKG16ePRdmoWsCcWFO163oTP/yrWjYieI+bfzQ0xQUE1Thd4AZseZlkz/A3dqp3miBqLwg==",
+  "dgSpecHash": "cL91zvDMMEo8yzpnAyo4Uc81INCNqf5JVHS3ZI76aYZqoFY4IZxZ5MYS0bzN8dwWR8fqXkxVCbZJPjA03puNbg==",
   "success": true,
   "projectFilePath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Presentation\\NetCoreOnionArchTemplate.API\\NetCoreOnionArchTemplate.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\asus\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\fluentvalidation\\11.8.1\\fluentvalidation.11.8.1.nupkg.sha512",

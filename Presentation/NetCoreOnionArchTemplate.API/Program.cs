@@ -1,17 +1,8 @@
-using FluentValidation.AspNetCore;
-using Microsoft.IdentityModel.Tokens;
 using NetCoreOnionArchTemplate.Application;
-using NetCoreOnionArchTemplate.Application.Validators.Products;
 using NetCoreOnionArchTemplate.Persistence;
 using NetCoreOnionArchTemplate.Infrastructure;
-using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.OpenApi.Models;
 using Serilog;
 using Serilog.Core;
-using Serilog.Sinks.MSSqlServer;
-using System.Collections.ObjectModel;
-using System.Data;
 using System.Security.Claims;
 using Serilog.Context;
 using NetCoreOnionArchTemplate.API.Extensions;
@@ -20,6 +11,7 @@ using NetCoreOnionArchTemplate.API.Filters;
 using NetCoreOnionArchTemplate.API.Utility;
 using NetCoreOnionArchTemplate.API;
 using NetCoreOnionArchTemplate.Application.Consts;
+using NetCoreOnionArchTemplate.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +22,7 @@ builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices();
 builder.Services.AddSignalRServices();
 builder.Services.AppApi(builder.Configuration);
+builder.Services.AddCustomMapper();
 
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
 //policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()

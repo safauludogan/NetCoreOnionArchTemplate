@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\NetCoreOnionArchTemplate.Application\NetCoreOnionArchTemplate.Application.csproj" />
+    <ProjectReference Include="..\..\Core\NetCoreOnionArchTemplate.Mapper\NetCoreOnionArchTemplate.Mapper.csproj" />
     <ProjectReference Include="..\..\Infrastructure\NetCoreOnionArchTemplate.Infrastructure\NetCoreOnionArchTemplate.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\NetCoreOnionArchTemplate.Persistence\NetCoreOnionArchTemplate.Persistence.csproj" />
     <ProjectReference Include="..\..\Infrastructure\NetCoreOnionArchTemplate.SignalR\NetCoreOnionArchTemplate.SignalR.csproj" />
