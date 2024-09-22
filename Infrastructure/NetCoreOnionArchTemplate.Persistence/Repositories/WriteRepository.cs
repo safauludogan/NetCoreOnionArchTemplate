@@ -42,8 +42,10 @@ namespace NetCoreOnionArchTemplate.Persistence.Repositories
         }
         public async Task<bool> RemoveAsync(Guid Id)
         {
-            T result = await Table.FirstOrDefaultAsync(x => x.Id == Id);
-            return Remove(result);
+            T? result = await Table.FirstOrDefaultAsync(x => x.Id == Id);
+            if (result != null)
+                return Remove(result);
+            return false;
         }
 
         public bool Update(T model)
