@@ -58,9 +58,5 @@ namespace NetCoreOnionArchTemplate.Persistence.Repositories
             Table.UpdateRange(datas);
             return true;
         }
-        public async Task<int> SaveAsync()
-            => await _context.SaveChangesAsync();
-
-
     }
 }

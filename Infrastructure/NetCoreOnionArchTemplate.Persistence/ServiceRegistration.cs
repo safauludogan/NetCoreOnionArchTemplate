@@ -3,11 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services;
+using NetCoreOnionArchTemplate.Application.Interfaces.UnitOfWorks;
 using NetCoreOnionArchTemplate.Application.Repositories;
 using NetCoreOnionArchTemplate.Domain.Entities.Identity;
 using NetCoreOnionArchTemplate.Persistence.Context;
 using NetCoreOnionArchTemplate.Persistence.Repositories;
 using NetCoreOnionArchTemplate.Persistence.Services;
+using NetCoreOnionArchTemplate.Persistence.UnitOfWorks;
 
 namespace NetCoreOnionArchTemplate.Persistence
 {
@@ -42,6 +44,8 @@ namespace NetCoreOnionArchTemplate.Persistence
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IAuthorizationEndpointService, AuthorizationEndpointService>();
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }
 }
