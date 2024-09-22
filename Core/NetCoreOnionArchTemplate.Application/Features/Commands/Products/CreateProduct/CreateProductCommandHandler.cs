@@ -18,7 +18,7 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.Products.Create
 		{
 			Product product = new()
 			{
-				Name = request.Name,
+				Name = request.Name!,
 				Price = request.Price,
 				Stock = request.Stock
 			};

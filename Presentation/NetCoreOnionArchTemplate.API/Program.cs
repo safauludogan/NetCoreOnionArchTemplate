@@ -5,13 +5,13 @@ using Serilog;
 using Serilog.Core;
 using System.Security.Claims;
 using Serilog.Context;
-using NetCoreOnionArchTemplate.API.Extensions;
 using NetCoreOnionArchTemplate.SignalR;
 using NetCoreOnionArchTemplate.API.Filters;
 using NetCoreOnionArchTemplate.API.Utility;
 using NetCoreOnionArchTemplate.API;
 using NetCoreOnionArchTemplate.Application.Consts;
 using NetCoreOnionArchTemplate.Mapper;
+using NetCoreOnionArchTemplate.Application.Exceptions.MiddleWareException;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,7 +44,7 @@ builder.Host.UseSerilog(log);
 
 builder.Services.AddControllers(options =>
 {
-	options.Filters.Add<RolePermissionFilter>();
+    options.Filters.Add<RolePermissionFilter>();
 });
 
 builder.Services.AddEndpointsApiExplorer();
@@ -53,7 +53,7 @@ builder.Services.AddEndpointsApiExplorer();
 var env = builder.Environment;
 
 builder.Configuration
-	.SetBasePath(env.ContentRootPath)
+    .SetBasePath(env.ContentRootPath)
      .AddJsonFile("appsettings.json", optional: false)
      .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
@@ -71,13 +71,14 @@ else
     app.UseHsts();
 }
 
-//if (app.Environment.IsDevelopment())
-//{
-app.UseSwagger();
-app.UseSwaggerUI();
-//}
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
-app.ConfigureExceptionHandler(app.Services.GetRequiredService<ILogger<Program>>());
+app.ConfigureExceptionHandlingMiddleware();// Global exception
+
 app.UseSerilogRequestLogging();
 
 app.UseCors();

@@ -1,11 +1,11 @@
-﻿using FluentValidation;
-using NetCoreOnionArchTemplate.Application.Features.Commands.Products.CreateProduct;
+﻿
+using FluentValidation;
 
-namespace NetCoreOnionArchTemplate.Application.Validators.Products
+namespace NetCoreOnionArchTemplate.Application.Features.Commands.Products.CreateProduct
 {
-    public class CreateProductValidator : AbstractValidator<CreateProductCommandRequest>
+    public class CreateProductCommandValidator : AbstractValidator<CreateProductCommandRequest>
     {
-        public CreateProductValidator()
+        public CreateProductCommandValidator()
         {
             RuleFor(p => p.Name)
                 .NotEmpty()

@@ -4,7 +4,7 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.Products.Create
 {
     public class CreateProductCommandRequest : IRequest<CreateProductCommandResponse>
     {
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public float Price { get; set; }
         public int Stock { get; set; }
     }

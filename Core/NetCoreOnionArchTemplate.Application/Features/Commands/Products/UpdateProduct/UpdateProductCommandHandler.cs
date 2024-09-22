@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Logging;
 using NetCoreOnionArchTemplate.Application.Interfaces.AutoMapper;
 using NetCoreOnionArchTemplate.Application.Interfaces.UnitOfWorks;
-using NetCoreOnionArchTemplate.Application.Repositories;
 using NetCoreOnionArchTemplate.Domain.Entities;
 
 namespace NetCoreOnionArchTemplate.Application.Features.Commands.Products.UpdateProduct
