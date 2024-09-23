@@ -5,6 +5,7 @@ using NetCoreOnionArchTemplate.Application.Abstractions.Services;
 using NetCoreOnionArchTemplate.Application.Abstractions.UnitOfWorks;
 using NetCoreOnionArchTemplate.Application.DTOs.User;
 using NetCoreOnionArchTemplate.Application.Exceptions;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Auth.Rules;
 using NetCoreOnionArchTemplate.Application.Helpers;
 using NetCoreOnionArchTemplate.Domain.Entities;
 using NetCoreOnionArchTemplate.Domain.Entities.Identity;
@@ -18,12 +19,14 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
         private readonly RoleManager<AppRole> _roleManager;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public UserService(UserManager<AppUser> userManager, IUnitOfWork unitOfWork, RoleManager<AppRole> roleManager, IMapper mapper)
+        private readonly AuthRules _authRules;
+        public UserService(UserManager<AppUser> userManager, IUnitOfWork unitOfWork, RoleManager<AppRole> roleManager, IMapper mapper, AuthRules authRules)
         {
             _userManager = userManager;
             _unitOfWork = unitOfWork;
             _roleManager = roleManager;
             _mapper = mapper;
+            _authRules = authRules;
         }
 
         public async Task<CreateUserResponse> CreateAsync(CreateUserDto model)
@@ -52,7 +55,7 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
                         ConcurrencyStamp = Guid.NewGuid().ToString()
                     });
                 }
-                await _userManager.AddToRoleAsync(user,"user");
+                await _userManager.AddToRoleAsync(user, "user");
             }
             foreach (var error in result.Errors)
             {
@@ -61,16 +64,14 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
             return response;
         }
 
-        public async Task UpdateRefreshTokenAsync(string refreshToken, AppUser user, DateTime refreshTokenEndDate)
+        public async Task UpdateRefreshTokenAsync(string refreshToken, AppUser? user, DateTime refreshTokenEndDate)
         {
-            if (user != null)
-            {
-                user.RefreshToken = refreshToken;
-                user.RefreshTokenEndDate = refreshTokenEndDate;
-                await _userManager.UpdateAsync(user);
-            }
-            else
-                throw new NotFoundUserException();
+            await _authRules.EmailAndUsernameOrPasswordShouldNotBeInvalid(user, true);
+
+            user!.RefreshToken = refreshToken;
+            user.RefreshTokenEndDate = refreshTokenEndDate;
+            await _userManager.UpdateAsync(user);
+
         }
 
         public async Task<bool> UpdatePasswordAsync(string userId, string resetToken, string newPassword)

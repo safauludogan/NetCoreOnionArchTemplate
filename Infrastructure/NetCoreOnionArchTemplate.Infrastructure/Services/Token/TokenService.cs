@@ -20,7 +20,7 @@ namespace NetCoreOnionArchTemplate.Infrastructure.Services.Token
             _userManager = userManager;
         }
 
-        public async Task<Application.DTOs.Token> CreateAccessToken(AppUser user)
+        public async Task<Application.DTOs.Token> CreateAccessToken(AppUser user, IList<string> roles)
         {
             Application.DTOs.Token token = new();
 
@@ -40,6 +40,11 @@ namespace NetCoreOnionArchTemplate.Infrastructure.Services.Token
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim(ClaimTypes.NameIdentifier , user.Id.ToString())
             };
+
+            foreach (var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
 
             JwtSecurityToken securityToken = new(
                 audience: _tokenSettings.Audience,

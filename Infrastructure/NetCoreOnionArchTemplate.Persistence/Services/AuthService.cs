@@ -5,101 +5,101 @@ using NetCoreOnionArchTemplate.Application.Abstractions.Token;
 using NetCoreOnionArchTemplate.Application.DTOs;
 using NetCoreOnionArchTemplate.Application.DTOs.User;
 using NetCoreOnionArchTemplate.Application.Exceptions;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Auth.Rules;
 using NetCoreOnionArchTemplate.Application.Helpers;
 using NetCoreOnionArchTemplate.Domain.Entities.Identity;
 
 namespace NetCoreOnionArchTemplate.Persistence.Services
 {
-	public class AuthService : IAuthService
-	{
-		private readonly UserManager<AppUser> _userManager;
-		private readonly SignInManager<AppUser> _signInManager;
-		private readonly ITokenService _tokenHandler;
-		private readonly IUserService _userService;
-		private readonly IMailService _mailService;
+    public class AuthService : IAuthService
+    {
+        private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
+        private readonly ITokenService _tokenHandler;
+        private readonly IUserService _userService;
+        private readonly IMailService _mailService;
+        private readonly AuthRules _authRules;
 
-		public AuthService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenHandler, IUserService userService, IMailService mailService)
-		{
-			_userManager = userManager;
-			_signInManager = signInManager;
-			_tokenHandler = tokenHandler;
-			_userService = userService;
-			_mailService = mailService;
-		}
+        public AuthService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenHandler, IUserService userService, IMailService mailService, AuthRules authRules)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _tokenHandler = tokenHandler;
+            _userService = userService;
+            _mailService = mailService;
+            _authRules = authRules;
+        }
 
-		public async Task<LoginUserResponse> LoginAsync(string usernameOrEmail, string password)
-		{
-			AppUser? user = await _userManager.FindByNameAsync(usernameOrEmail);
-			if (user == null)
-				user = await _userManager.FindByEmailAsync(usernameOrEmail);
+        public async Task<LoginUserResponse> LoginAsync(string usernameOrEmail, string password)
+        {
+            AppUser? user = await _userManager.FindByNameAsync(usernameOrEmail);
+            if (user == null)
+                user = await _userManager.FindByEmailAsync(usernameOrEmail);
 
-			if (user == null)
-				throw new NotFoundUserException();
+            SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, password, false);
 
-			SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, password, false);
+            await _authRules.EmailAndUsernameOrPasswordShouldNotBeInvalid(user, result.Succeeded);
 
-			if (result.Succeeded)//Authentication başarılı!
-			{
-				Token token = await _tokenHandler.CreateAccessToken(user);
-				await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.RefreshTokenExpiration);
-                return new LoginUserResponse
-                {
-                    Token = token,
-                    User = user,
-                };
+            IList<string> roles = await _userManager.GetRolesAsync(user);
+
+            Token token = await _tokenHandler.CreateAccessToken(user, roles);
+            await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.RefreshTokenExpiration);
+            return new LoginUserResponse
+            {
+                Token = token,
+                User = user,
+            };
+        }
+        public Task<Token> FacebookLoginAsync(string authToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Token> GoogleLoginAsync(string idToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Token> RefreshTokenLoginAsync(string refreshToken)
+        {
+            AppUser? user = await _userManager.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
+            if (user != null && user?.RefreshTokenEndDate > DateTime.UtcNow)
+            {
+                IList<string> roles = await _userManager.GetRolesAsync(user);
+
+
+                Token token = await _tokenHandler.CreateAccessToken(user, roles);
+                await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.RefreshTokenExpiration);
+                return token;
             }
-            var isEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
-            if (!isEmailConfirmed)
-                throw new EmailConfirmException();
             throw new AuthenticationErrorException();
         }
-		public Task<Token> FacebookLoginAsync(string authToken)
-		{
-			throw new NotImplementedException();
-		}
 
-		public Task<Token> GoogleLoginAsync(string idToken)
-		{
-			throw new NotImplementedException();
-		}
+        public async Task PasswordResetAsync(string email)
+        {
+            AppUser? user = await _userManager.FindByEmailAsync(email);
+            if (user != null)
+            {
+                string resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
 
-		public async Task<Token> RefreshTokenLoginAsync(string refreshToken)
-		{
-			AppUser? user = await _userManager.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
-			if (user != null && user?.RefreshTokenEndDate > DateTime.UtcNow)
-			{
-				Token token = await _tokenHandler.CreateAccessToken(user);
-				await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.RefreshTokenExpiration);
-				return token;
-			}
-			throw new AuthenticationErrorException();
-		}
+                //Http protokolünde tırnak gibi özel karakterler sorun çıkaracağı için öncelikle üretilen token'ı byte dizisine dönüştürüyoruz.
+                //Daha sonra bunu decode ederek çözümleyeceğiz.
+                resetToken = resetToken.UrlEncode();
 
-		public async Task PasswordResetAsync(string email)
-		{
-			AppUser? user = await _userManager.FindByEmailAsync(email);
-			if (user != null)
-			{
-				string resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
+                await _mailService.SendPasswordResetMailAsync(email, user.Id, resetToken);
+            }
+        }
 
-				//Http protokolünde tırnak gibi özel karakterler sorun çıkaracağı için öncelikle üretilen token'ı byte dizisine dönüştürüyoruz.
-				//Daha sonra bunu decode ederek çözümleyeceğiz.
-				resetToken = resetToken.UrlEncode();
+        public async Task<bool> VerifyResetTokenAsync(string resetToken, string userId)
+        {
+            AppUser? user = await _userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                resetToken = resetToken.UrlDecode();
 
-				await _mailService.SendPasswordResetMailAsync(email, user.Id, resetToken);
-			}
-		}
-
-		public async Task<bool> VerifyResetTokenAsync(string resetToken, string userId)
-		{
-			AppUser? user = await _userManager.FindByIdAsync(userId);
-			if (user != null)
-			{
-				resetToken = resetToken.UrlDecode();
-
-				return await _userManager.VerifyUserTokenAsync(user, _userManager.Options.Tokens.PasswordResetTokenProvider, "ResetPassword", resetToken);
-			}
-			return false;
-		}
-	}
+                return await _userManager.VerifyUserTokenAsync(user, _userManager.Options.Tokens.PasswordResetTokenProvider, "ResetPassword", resetToken);
+            }
+            return false;
+        }
+    }
 }

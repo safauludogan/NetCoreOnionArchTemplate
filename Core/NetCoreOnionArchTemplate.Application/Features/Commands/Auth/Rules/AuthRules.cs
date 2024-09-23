@@ -11,5 +11,11 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.Auth.Rules
             if (user is not null) throw new UserAlreadyExistsException();
             return Task.CompletedTask;
         }
+
+        public Task EmailAndUsernameOrPasswordShouldNotBeInvalid(AppUser? user, bool checkPassword)
+        {
+            if (user is null || !checkPassword) throw new EmailAndUsernameOrPasswordShouldNotBeInvalidException();
+            return Task.CompletedTask;
+        }
     }
 }
