@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services;
+using NetCoreOnionArchTemplate.Application.Features.Queries.Auth.GetAllUsers;
 
 namespace NetCoreOnionArchTemplate.Application.Features.Queries.AppUser.GetAllUsers
 {

@@ -1,6 +1,7 @@
 ﻿using MediatR;
+using NetCoreOnionArchTemplate.Application.Features.Queries.AppUser.GetAllUsers;
 
-namespace NetCoreOnionArchTemplate.Application.Features.Queries.AppUser.GetAllUsers
+namespace NetCoreOnionArchTemplate.Application.Features.Queries.Auth.GetAllUsers
 {
     public class GetAllUsersQueryRequest : IRequest<GetAllUsersQueryResponse>
     {

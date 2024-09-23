@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using NetCoreOnionArchTemplate.Application.Abstractions.Hubs;
 using NetCoreOnionArchTemplate.Application.Abstractions.UnitOfWorks;
-using NetCoreOnionArchTemplate.Application.Features.Rules;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Products.Rules;
 using NetCoreOnionArchTemplate.Domain.Entities;
 
 namespace NetCoreOnionArchTemplate.Application.Features.Commands.Products.CreateProduct

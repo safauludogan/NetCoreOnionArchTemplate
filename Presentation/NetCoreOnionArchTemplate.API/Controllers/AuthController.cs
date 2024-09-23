@@ -1,9 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.LoginUser;
-using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.PasswordReset;
-using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.RefreshTokenLogin;
-using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.VerifyResetToken;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Auth.LoginUser;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Auth.PasswordReset;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Auth.RefreshTokenLogin;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Auth.VerifyResetToken;
 
 namespace NetCoreOnionArchTemplate.API.Controllers
 {

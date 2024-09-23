@@ -16,6 +16,7 @@ using NetCoreOnionArchTemplate.Application.Exceptions.MiddleWareException;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHttpContextAccessor();//Client'tan gelen request neticesinde oluşturulan HttpContext nesnesine katmanlardaki class'lar üzerinden erişebilmemizi sağlar.
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 builder.Services.AddPersistanceServices(builder.Configuration);
 builder.Services.AddApplicationServices();

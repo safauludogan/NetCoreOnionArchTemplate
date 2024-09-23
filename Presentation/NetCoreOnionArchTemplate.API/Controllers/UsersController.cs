@@ -4,11 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 using NetCoreOnionArchTemplate.Application.Consts;
 using NetCoreOnionArchTemplate.Application.CustomAttributes;
 using NetCoreOnionArchTemplate.Application.Enums;
-using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.AssignRoleToUser;
-using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.CreateUser;
-using NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.UpdatePassword;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Auth.AssignRoleToUser;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Auth.CreateUser;
+using NetCoreOnionArchTemplate.Application.Features.Commands.Auth.UpdatePassword;
 using NetCoreOnionArchTemplate.Application.Features.Queries.AppUser.GetAllUsers;
 using NetCoreOnionArchTemplate.Application.Features.Queries.AppUser.GetRolesToUser;
+using NetCoreOnionArchTemplate.Application.Features.Queries.Auth.GetAllUsers;
 
 namespace NetCoreOnionArchTemplate.API.Controllers
 {

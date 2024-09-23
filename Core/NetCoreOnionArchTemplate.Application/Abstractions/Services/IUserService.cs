@@ -5,7 +5,7 @@ namespace NetCoreOnionArchTemplate.Application.Abstractions.Services
 {
     public interface IUserService
     {
-        Task<CreateUserResponse> CreateAsync(CreateUser model);
+        Task<CreateUserResponse> CreateAsync(CreateUserDto model);
         Task UpdateRefreshTokenAsync(string refreshToken, AppUser user, DateTime refreshTokenEndDate);
         Task<bool> UpdatePasswordAsync(string userId, string resetToken, string newPassword);
         Task<List<ListUser>> GetAllUsers(int page, int size);
