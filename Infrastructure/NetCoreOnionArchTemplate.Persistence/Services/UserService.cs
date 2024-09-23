@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services;
 using NetCoreOnionArchTemplate.Application.DTOs.User;
 using NetCoreOnionArchTemplate.Application.Exceptions;
@@ -12,7 +11,7 @@ using System.Data;
 
 namespace NetCoreOnionArchTemplate.Persistence.Services
 {
-	public class UserService : IUserService
+    public class UserService : IUserService
 	{
 		private readonly UserManager<AppUser> _userManager;
 		private readonly IEndpointReadRepository _endpointReadRepository;
@@ -41,14 +40,13 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 			return response;
 		}
 
-		public async Task UpdateRefreshTokenAsync(string refreshToken, AppUser user, DateTime accessTokenDate
-			, int refreshTokenLifeTime)
+		public async Task UpdateRefreshTokenAsync(string refreshToken, AppUser user, DateTime refreshTokenEndDate)
 		{
 			if (user != null)
 			{
 				user.RefreshToken = refreshToken;
-				user.RefreshTokenEndDate = accessTokenDate.AddSeconds(refreshTokenLifeTime);
-				await _userManager.UpdateAsync(user);
+				user.RefreshTokenEndDate = refreshTokenEndDate;
+                await _userManager.UpdateAsync(user);
 			}
 			else
 				throw new NotFoundUserException();
@@ -150,5 +148,5 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 			}
 			return false;
 		}
-	}
+    }
 }

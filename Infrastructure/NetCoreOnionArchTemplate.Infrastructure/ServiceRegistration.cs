@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services.Configurations;
 using NetCoreOnionArchTemplate.Application.Abstractions.Token;
@@ -10,11 +11,13 @@ namespace NetCoreOnionArchTemplate.Infrastructure
 {
     public static class ServiceRegistration
     {
-        public static void AddInfrastructureServices(this IServiceCollection services)
+        public static void AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<ITokenHandler, TokenHandler>();
+            services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IMailService, MailService>();
             services.AddScoped<IApplicationService, ApplicationService>();
+
+            services.Configure<TokenSettings>(configuration.GetSection("JWT"));
         }
     }
 }

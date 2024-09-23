@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services;
-using NetCoreOnionArchTemplate.Application.Interfaces.UnitOfWorks;
+using NetCoreOnionArchTemplate.Application.Abstractions.UnitOfWorks;
 using NetCoreOnionArchTemplate.Application.Repositories;
 using NetCoreOnionArchTemplate.Domain.Entities.Identity;
 using NetCoreOnionArchTemplate.Persistence.Context;

@@ -19,7 +19,7 @@ builder.Services.AddHttpContextAccessor();//Client'tan gelen request neticesinde
 
 builder.Services.AddPersistanceServices(builder.Configuration);
 builder.Services.AddApplicationServices();
-builder.Services.AddInfrastructureServices();
+builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddSignalRServices();
 builder.Services.AppApi(builder.Configuration);
 builder.Services.AddCustomMapper();

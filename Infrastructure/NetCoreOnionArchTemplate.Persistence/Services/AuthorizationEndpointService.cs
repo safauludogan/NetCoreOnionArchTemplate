@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services.Configurations;
-using NetCoreOnionArchTemplate.Application.Interfaces.UnitOfWorks;
+using NetCoreOnionArchTemplate.Application.Abstractions.UnitOfWorks;
 using NetCoreOnionArchTemplate.Application.Repositories;
 using NetCoreOnionArchTemplate.Domain.Entities;
 using NetCoreOnionArchTemplate.Domain.Entities.Identity;

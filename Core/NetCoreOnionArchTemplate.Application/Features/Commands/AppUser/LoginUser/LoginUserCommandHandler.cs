@@ -14,7 +14,7 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.LoginUs
 
         public async Task<LoginUserCommandResponse> Handle(LoginUserCommandRequest request, CancellationToken cancellationToken)
         {
-            LoginUserResponse response = await _authService.LoginAsync(request.UsernameOrEmail, request.Password, 10000, 51000);
+            LoginUserResponse response = await _authService.LoginAsync(request.UsernameOrEmail, request.Password);
             return new LoginUserSuccessCommandResponse()
             {
                 Response = response

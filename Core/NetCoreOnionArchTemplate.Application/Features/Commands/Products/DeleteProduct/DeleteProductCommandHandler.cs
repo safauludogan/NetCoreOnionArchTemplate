@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using NetCoreOnionArchTemplate.Application.Interfaces.UnitOfWorks;
+using NetCoreOnionArchTemplate.Application.Abstractions.UnitOfWorks;
 using NetCoreOnionArchTemplate.Application.Repositories;
 using NetCoreOnionArchTemplate.Domain.Entities;
 

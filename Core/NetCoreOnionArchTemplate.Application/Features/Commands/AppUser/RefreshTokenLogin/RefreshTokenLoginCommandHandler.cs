@@ -15,7 +15,7 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.AppUser.Refresh
 
         public async Task<RefreshTokenLoginCommandResponse> Handle(RefreshTokenLoginCommandRequest request, CancellationToken cancellationToken)
         {
-            Token token = await _authService.RefreshTokenLoginAsync(request.RefreshToken, 10, 5);
+            Token token = await _authService.RefreshTokenLoginAsync(request.RefreshToken);
             return new() { Token = token };
         }
     }

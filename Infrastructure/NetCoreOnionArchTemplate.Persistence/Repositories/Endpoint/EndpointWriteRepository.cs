@@ -4,7 +4,7 @@ using NetCoreOnionArchTemplate.Persistence.Context;
 
 namespace NetCoreOnionArchTemplate.Persistence.Repositories
 {
-	public class EndpointWriteRepository : WriteRepository<Endpoint>, IEndpointWriteRepository
+    public class EndpointWriteRepository : WriteRepository<Endpoint>, IEndpointWriteRepository
 	{
 		public EndpointWriteRepository(DataContext context) : base(context)
 		{

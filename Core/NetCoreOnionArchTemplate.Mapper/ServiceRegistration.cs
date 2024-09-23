@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using NetCoreOnionArchTemplate.Application.Interfaces.AutoMapper;
+using NetCoreOnionArchTemplate.Application.Abstractions.AutoMapper;
 
 namespace NetCoreOnionArchTemplate.Mapper
 {

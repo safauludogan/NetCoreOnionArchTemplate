@@ -4,7 +4,7 @@ using NetCoreOnionArchTemplate.Persistence.Context;
 
 namespace NetCoreOnionArchTemplate.Persistence.Repositories
 {
-	public class EndpointReadRepository : ReadRepository<Endpoint>, IEndpointReadRepository
+    public class EndpointReadRepository : ReadRepository<Endpoint>, IEndpointReadRepository
 	{
 		public EndpointReadRepository(DataContext context) : base(context)
 		{

@@ -4,7 +4,7 @@ using NetCoreOnionArchTemplate.Persistence.Context;
 
 namespace NetCoreOnionArchTemplate.Persistence.Repositories
 {
-	public class MenuWriteRepository : WriteRepository<Menu>, IMenuWriteRepository
+    public class MenuWriteRepository : WriteRepository<Menu>, IMenuWriteRepository
 	{
 		public MenuWriteRepository(DataContext context) : base(context)
 		{

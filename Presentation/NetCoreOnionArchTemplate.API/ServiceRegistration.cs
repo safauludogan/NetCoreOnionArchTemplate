@@ -28,11 +28,11 @@ namespace NetCoreOnionArchTemplate.API
                     }
                 };
 
-                var webUrl = "http://sponsoruzbiz.com/";
+                var webUrl = "http://OnionArcTemp.com/";
 
                 gen.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "SponsoruzBiz Wep Api",
+                    Title = "OnionArcTemp Wep Api",
                     Version = "v1",
                     License = new OpenApiLicense
                     {
@@ -93,9 +93,9 @@ namespace NetCoreOnionArchTemplate.API
                         ValidateLifetime = true, // Oluşturulan token değerinin süresini kontrol edecek olan doğrulama
                         ValidateIssuerSigningKey = true, // Üretilecek token değerinin uygulamamıza ait bir değer olduğunu ifade eden suciry key verisinin doğrulamasıdır.
 
-                        ValidAudience = configuration["Token:Audience"],
-                        ValidIssuer = configuration["Token:Issuer"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Token:SecurityKey"])),
+                        ValidAudience = configuration["JWT:Audience"],
+                        ValidIssuer = configuration["JWT:Issuer"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:SecurityKey"])),
                         LifetimeValidator = (notBefore, expires, securityToken, validationParameters) => expires != null ? expires > DateTime.UtcNow : false,
 
                         NameClaimType = ClaimTypes.Name //JWT üzerinde Name claimne karşılık gelen değeri User.Identity.Name propertysinden elde edebiliriz.

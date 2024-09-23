@@ -4,7 +4,7 @@ namespace NetCoreOnionArchTemplate.Application.Abstractions.Services.Authenticat
 {
     public interface IInternalAuthentication
     {
-        Task<LoginUserResponse> LoginAsync(string usernameOrEmail, string password, int accessTokenLifeTime, int addOnAccessTokenDate);
-        Task<DTOs.Token> RefreshTokenLoginAsync(string refreshToken, int accessTokenLifeTime, int addOnAccessTokenDate);
+        Task<LoginUserResponse> LoginAsync(string usernameOrEmail, string password);
+        Task<DTOs.Token> RefreshTokenLoginAsync(string refreshToken);
     }
 }

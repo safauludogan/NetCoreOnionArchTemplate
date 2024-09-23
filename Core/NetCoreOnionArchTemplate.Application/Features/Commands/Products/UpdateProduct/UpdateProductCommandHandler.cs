@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Logging;
-using NetCoreOnionArchTemplate.Application.Interfaces.AutoMapper;
-using NetCoreOnionArchTemplate.Application.Interfaces.UnitOfWorks;
+using NetCoreOnionArchTemplate.Application.Abstractions.AutoMapper;
+using NetCoreOnionArchTemplate.Application.Abstractions.UnitOfWorks;
 using NetCoreOnionArchTemplate.Domain.Entities;
 
 namespace NetCoreOnionArchTemplate.Application.Features.Commands.Products.UpdateProduct

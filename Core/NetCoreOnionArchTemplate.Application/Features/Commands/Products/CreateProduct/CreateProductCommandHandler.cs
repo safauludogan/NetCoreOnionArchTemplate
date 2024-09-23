@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using NetCoreOnionArchTemplate.Application.Abstractions.Hubs;
+using NetCoreOnionArchTemplate.Application.Abstractions.UnitOfWorks;
 using NetCoreOnionArchTemplate.Application.Features.Rules;
-using NetCoreOnionArchTemplate.Application.Interfaces.UnitOfWorks;
 using NetCoreOnionArchTemplate.Domain.Entities;
 
 namespace NetCoreOnionArchTemplate.Application.Features.Commands.Products.CreateProduct

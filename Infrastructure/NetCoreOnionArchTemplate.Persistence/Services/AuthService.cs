@@ -12,14 +12,13 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 {
 	public class AuthService : IAuthService
 	{
-
 		private readonly UserManager<AppUser> _userManager;
 		private readonly SignInManager<AppUser> _signInManager;
-		private readonly ITokenHandler _tokenHandler;
+		private readonly ITokenService _tokenHandler;
 		private readonly IUserService _userService;
 		private readonly IMailService _mailService;
 
-		public AuthService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenHandler tokenHandler, IUserService userService, IMailService mailService)
+		public AuthService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenHandler, IUserService userService, IMailService mailService)
 		{
 			_userManager = userManager;
 			_signInManager = signInManager;
@@ -28,7 +27,7 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 			_mailService = mailService;
 		}
 
-		public async Task<LoginUserResponse> LoginAsync(string usernameOrEmail, string password, int accessTokenLifeTime, int addOnAccessTokenDate)
+		public async Task<LoginUserResponse> LoginAsync(string usernameOrEmail, string password)
 		{
 			AppUser? user = await _userManager.FindByNameAsync(usernameOrEmail);
 			if (user == null)
@@ -41,12 +40,12 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 
 			if (result.Succeeded)//Authentication başarılı!
 			{
-				Token token = _tokenHandler.CreateAccessToken(accessTokenLifeTime, user);
-				await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.Expiration, addOnAccessTokenDate);
+				Token token = await _tokenHandler.CreateAccessToken(user);
+				await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.RefreshTokenExpiration);
                 return new LoginUserResponse
                 {
                     Token = token,
-                    User = user
+                    User = user,
                 };
             }
             var isEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
@@ -64,13 +63,13 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
 			throw new NotImplementedException();
 		}
 
-		public async Task<Token> RefreshTokenLoginAsync(string refreshToken, int accessTokenLifeTime, int addOnAccessTokenDate)
+		public async Task<Token> RefreshTokenLoginAsync(string refreshToken)
 		{
 			AppUser? user = await _userManager.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
 			if (user != null && user?.RefreshTokenEndDate > DateTime.UtcNow)
 			{
-				Token token = _tokenHandler.CreateAccessToken(accessTokenLifeTime, user);
-				await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.Expiration, addOnAccessTokenDate);
+				Token token = await _tokenHandler.CreateAccessToken(user);
+				await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.RefreshTokenExpiration);
 				return token;
 			}
 			throw new AuthenticationErrorException();

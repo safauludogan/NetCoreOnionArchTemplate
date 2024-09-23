@@ -3,7 +3,7 @@ using AutoMapper.Internal;
 
 namespace NetCoreOnionArchTemplate.Mapper.AutoMapper
 {
-    public class Mapper : Application.Interfaces.AutoMapper.IMapper
+    public class Mapper : Application.Abstractions.AutoMapper.IMapper
     {
         public static List<TypePair> typePairs = new();
         private IMapper MapperContainer;
