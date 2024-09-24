@@ -17,5 +17,11 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.Auth.Rules
             if (user is null || !checkPassword) throw new EmailAndUsernameOrPasswordShouldNotBeInvalidException();
             return Task.CompletedTask;
         }
+
+        public Task EmailAddressShouldNotBeInvalid(AppUser? user)
+        {
+            if (user is null) throw new EmailAddressShouldNotBeInvalidException();
+            return Task.CompletedTask;
+        }
     }
 }

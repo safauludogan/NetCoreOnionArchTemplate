@@ -58,9 +58,13 @@ namespace NetCoreOnionArchTemplate.Infrastructure.Services.Token
             //Token oluşturucu sınıfından bir örnek alalım.
             JwtSecurityTokenHandler tokenHandler = new();
             token.AccessToken = tokenHandler.WriteToken(securityToken);
-
+           
             token.RefreshToken = CreateRefreshToken();
 
+            /// AspNetUserClaims tablosunda aktif bir claims yapısı varsa önce onu sil daha sonra
+            /// tekrardan oluştur
+            var userClaims = await _userManager.GetClaimsAsync(user);
+            if (userClaims != null) await _userManager.RemoveClaimsAsync(user, userClaims);
             await _userManager.AddClaimsAsync(user, claims);
 
             return token;

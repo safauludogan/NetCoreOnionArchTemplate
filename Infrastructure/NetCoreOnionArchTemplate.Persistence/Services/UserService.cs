@@ -71,6 +71,7 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
             user!.RefreshToken = refreshToken;
             user.RefreshTokenEndDate = refreshTokenEndDate;
             await _userManager.UpdateAsync(user);
+            await _userManager.UpdateSecurityStampAsync(user);
 
         }
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Azure.Core;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using NetCoreOnionArchTemplate.Application.Abstractions.Services;
 using NetCoreOnionArchTemplate.Application.Abstractions.Token;
@@ -43,6 +44,10 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
             IList<string> roles = await _userManager.GetRolesAsync(user);
 
             Token token = await _tokenHandler.CreateAccessToken(user, roles);
+
+            /// Kullanıcı token bilgisini AspNetUserTokens tablosuna kayıt ederek kullanıcıların aktif tokenlarını görebiliriz.
+            await _userManager.SetAuthenticationTokenAsync(user, "Default", "AccessToken", token.AccessToken);
+
             await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.RefreshTokenExpiration);
             return new LoginUserResponse
             {
@@ -67,8 +72,12 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
             {
                 IList<string> roles = await _userManager.GetRolesAsync(user);
 
-
                 Token token = await _tokenHandler.CreateAccessToken(user, roles);
+
+                /// Kullanıcı token bilgisini AspNetUserTokens tablosuna kayıt ederek kullanıcıların aktif tokenlarını görebiliriz.
+                /// TODO: google veya facebook ile signIn olunca default login type'ı güncelle
+                await _userManager.SetAuthenticationTokenAsync(user, "Default", "AccessToken", token.AccessToken);
+
                 await _userService.UpdateRefreshTokenAsync(token.RefreshToken, user, token.RefreshTokenExpiration);
                 return token;
             }
@@ -100,6 +109,23 @@ namespace NetCoreOnionArchTemplate.Persistence.Services
                 return await _userManager.VerifyUserTokenAsync(user, _userManager.Options.Tokens.PasswordResetTokenProvider, "ResetPassword", resetToken);
             }
             return false;
+        }
+
+        public async Task RevokeAsync(AppUser user)
+        {
+            user!.RefreshToken = null;
+            await _userManager.UpdateAsync(user);
+        }
+
+        public async Task RevokeAllAsync()
+        {
+            List<AppUser> users = await _userManager.Users.ToListAsync();
+
+            foreach (AppUser user in users)
+            {
+                user.RefreshToken = null;
+                await _userManager.UpdateAsync(user);
+            }
         }
     }
 }
