@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using NetCoreOnionArchTemplate.API.Filters;
 using NetCoreOnionArchTemplate.Application.Consts;
 using NetCoreOnionArchTemplate.Application.CustomAttributes;
 using NetCoreOnionArchTemplate.Application.Enums;
@@ -13,7 +14,8 @@ using NetCoreOnionArchTemplate.Application.Features.Queries.Auth.GetAllUsers;
 
 namespace NetCoreOnionArchTemplate.API.Controllers
 {
-	[Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = "Admin")]
+    [Route("api/[controller]")]
 	[ApiController]
 	public class UsersController : ControllerBase
 	{
@@ -24,14 +26,18 @@ namespace NetCoreOnionArchTemplate.API.Controllers
 			_mediator = mediator;
 		}
 
-		[HttpPost("[action]")]
+        [ApiKeyAuthFilter]
+		[AllowAnonymous]
+        [HttpPost("[action]")]
 		public async Task<IActionResult> CreateUser(CreateUserCommandRequest request)
 		{
 			CreateUserCommandResponse response = await _mediator.Send(request);
 			return Ok(response);
 		}
 
-		[HttpPost("[action]")]
+        [ApiKeyAuthFilter]
+        [AllowAnonymous]
+        [HttpPost("[action]")]
 		public async Task<IActionResult> UpdatePassword(UpdatePasswordCommandRequest request)
 		{
 			UpdatePasswordCommandResponse response = await _mediator.Send(request);
@@ -39,7 +45,6 @@ namespace NetCoreOnionArchTemplate.API.Controllers
 		}
 
 		[HttpGet("[action]")]
-		[Authorize(AuthenticationSchemes = "Admin")]
 		[AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Get All Users", Menu = AuthorizeDefinitionConstants.Users)]
 		public async Task<IActionResult> GetAllUsers([FromQuery] GetAllUsersQueryRequest request)
 		{
@@ -48,7 +53,6 @@ namespace NetCoreOnionArchTemplate.API.Controllers
 		}
 
 		[HttpGet("[action]/{userId}")]
-		[Authorize(AuthenticationSchemes = "Admin")]
 		[AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Get Roles To User", Menu = AuthorizeDefinitionConstants.Users)]
 		public async Task<IActionResult> GetRolesToUser([FromRoute] GetRolesToUserQueryRequest request)
 		{
@@ -57,7 +61,6 @@ namespace NetCoreOnionArchTemplate.API.Controllers
 		}
 
 		[HttpPost("[action]")]
-		[Authorize(AuthenticationSchemes = "Admin")]
 		[AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Assign Role To User", Menu = AuthorizeDefinitionConstants.Users)]
 		public async Task<IActionResult> AssignRoleToUser([FromBody] AssignRoleToUserCommandRequest request)
 		{

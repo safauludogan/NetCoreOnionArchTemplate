@@ -48,6 +48,8 @@ builder.Services.AddControllers(options =>
     options.Filters.Add<RolePermissionFilter>();
 });
 
+builder.Services.AddScoped<ApiKeyAuthFilter>();
+
 builder.Services.AddEndpointsApiExplorer();
 
 #region Project Environments
