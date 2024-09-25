@@ -1,5 +1,7 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using NetCoreOnionArchTemplate.API.Filters;
 using NetCoreOnionArchTemplate.Application.Features.Commands.Auth.LoginUser;
 using NetCoreOnionArchTemplate.Application.Features.Commands.Auth.PasswordReset;
 using NetCoreOnionArchTemplate.Application.Features.Commands.Auth.RefreshTokenLogin;
@@ -9,6 +11,8 @@ using NetCoreOnionArchTemplate.Application.Features.Commands.Auth.VerifyResetTok
 
 namespace NetCoreOnionArchTemplate.API.Controllers
 {
+    [Authorize(AuthenticationSchemes = "Admin")]
+    [ApiKeyAuthFilter]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class AuthController : ControllerBase
@@ -20,6 +24,7 @@ namespace NetCoreOnionArchTemplate.API.Controllers
             _mediator = mediator;
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Login(LoginUserCommandRequest request)
         {
@@ -34,14 +39,16 @@ namespace NetCoreOnionArchTemplate.API.Controllers
             return Ok(response);
         }
 
-		[HttpPost]
+        [AllowAnonymous]
+        [HttpPost]
 		public async Task<IActionResult> PasswordReset([FromBody] PasswordResetCommandRequest request)
 		{
 			PasswordResetCommandResponse response = await _mediator.Send(request);
 			return Ok(response);
 		}
 
-		[HttpPost]
+        [AllowAnonymous]
+        [HttpPost]
 		public async Task<IActionResult> VerifyResetToken([FromBody] VerifyResetTokenCommandRequest request)
 		{
 			VerifyResetTokenCommandResponse response = await _mediator.Send(request);
