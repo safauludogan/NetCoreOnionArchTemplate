@@ -1,38 +1,41 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Logging;
-using NetCoreOnionArchTemplate.Application.Repositories;
+using NetCoreOnionArchTemplate.Application.Abstractions.UnitOfWorks;
+using NetCoreOnionArchTemplate.Application.DTOs.Products;
+using NetCoreOnionArchTemplate.Domain.Entities;
 
 namespace NetCoreOnionArchTemplate.Application.Features.Queries.Products.GetAllProduct
 {
     public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQueryRequest, GetAllProductQueryResponse>
     {
-        private readonly IProductReadRepository _productReadRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly ILogger<GetAllProductQueryHandler> _logger;
-        public GetAllProductQueryHandler(IProductReadRepository productReadRepository, ILogger<GetAllProductQueryHandler> logger)
+        public GetAllProductQueryHandler(ILogger<GetAllProductQueryHandler> logger, IUnitOfWork unitOfWork)
         {
-            _productReadRepository = productReadRepository;
             _logger = logger;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<GetAllProductQueryResponse> Handle(GetAllProductQueryRequest request, CancellationToken cancellationToken)
         {
             _logger.LogInformation("Get all products");
-            var totalCount = _productReadRepository.GetAll().Count();
-            var products = _productReadRepository.GetAll(tracking: false)
-            .Skip(request._Pagination.Page * request._Pagination.Size).Take(request._Pagination.Size).Select(p => new
+            //var totalCount = _unitOfWork.GetReadRepository<Product>().GetAll(tracking: false).Count();
+            var products = _unitOfWork.GetReadRepository<Product>().GetAll(tracking: false)
+                .Take(500000)
+            /*.Skip(request._Pagination.Page * request._Pagination.Size).Take(request._Pagination.Size)*/.Select(p => new ProductDto
             {
-                p.Id,
-                p.Name,
-                p.Stock,
-                p.Price,
+                Id = p.Id,
+                Name = p.Name,
+                /*  p.Stock,
+                 p.Price,
                 p.CreatedDate,
-                p.UpdatedDate
+                 p.UpdatedDate*/
             }).ToList();
 
-            return new()
+            return new GetAllProductQueryResponse()
             {
                 Products = products,
-                TotalCount = totalCount
+                TotalCount = 1
             };
         }
     }

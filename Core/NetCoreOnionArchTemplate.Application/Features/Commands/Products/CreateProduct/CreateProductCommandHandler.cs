@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Bogus;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using NetCoreOnionArchTemplate.Application.Abstractions.Hubs;
 using NetCoreOnionArchTemplate.Application.Abstractions.UnitOfWorks;
@@ -30,6 +31,21 @@ namespace NetCoreOnionArchTemplate.Application.Features.Commands.Products.Create
                 Price = request.Price,
                 Stock = request.Stock
             };
+
+            #region Fake data creator
+            Faker faker = new("tr");
+            List<Product> products1 = new();
+            for (int i = 0; i < 1000000; i++)
+            {
+                products1.Add(new()
+                {
+                    Name = faker.Commerce.Product(),
+                    Price = faker.Random.Number(1, 10000),
+                    Stock = faker.Random.Number(1, 50)
+                });
+            }
+            await _unitOfWork.GetWriteRepository<Product>().AddRangeAsync(products1);
+            #endregion
 
             await _unitOfWork.GetWriteRepository<Product>().AddAsync(product);
 

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "aqDSfnF+9kfIaGd9DzaaWxu/bVJVIXGbgoD8f+IYISQh2gJZ9EELlD9a2Ja8ntK/diZ14UadJnVvEGsodCz4PQ==",
+  "dgSpecHash": "C1wMS6kZBzAGmwSwtjABBBINJV7dftuBwGBv5m6r1Lohzyb4KSyNxe9TIJPdGgvBgVoEl9rZyiS0jZ1sZcSzjg==",
   "success": true,
   "projectFilePath": "D:\\WORK\\code\\.net\\NetCoreOnionArchTemplate\\Core\\NetCoreOnionArchTemplate.Application\\NetCoreOnionArchTemplate.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\asus\\.nuget\\packages\\bogus\\35.6.1\\bogus.35.6.1.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\fluentvalidation\\11.10.0\\fluentvalidation.11.10.0.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\asus\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.10.0\\fluentvalidation.dependencyinjectionextensions.11.10.0.nupkg.sha512",

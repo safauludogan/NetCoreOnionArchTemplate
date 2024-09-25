@@ -539,3 +539,8 @@ D:\WORK\code\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate
 D:\WORK\code\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\obj\Debug\net7.0\NetCoreOnionArchTemplate.API.pdb
 D:\WORK\code\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\obj\Debug\net7.0\NetCoreOnionArchTemplate.API.genruntimeconfig.cache
 D:\WORK\code\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\obj\Debug\net7.0\ref\NetCoreOnionArchTemplate.API.dll
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Bogus.dll
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Pipelines.Sockets.Unofficial.dll
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\StackExchange.Redis.dll
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+D:\WORK\code\.net\NetCoreOnionArchTemplate\Presentation\NetCoreOnionArchTemplate.API\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll

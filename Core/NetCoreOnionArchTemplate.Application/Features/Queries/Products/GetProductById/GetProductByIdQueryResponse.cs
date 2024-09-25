@@ -1,4 +1,4 @@
-﻿namespace NetCoreOnionArchTemplate.Application.Features.Queries.Product.GetProductById
+﻿namespace NetCoreOnionArchTemplate.Application.Features.Queries.Products.GetProductById
 {
     public class GetProductByIdQueryResponse
     {

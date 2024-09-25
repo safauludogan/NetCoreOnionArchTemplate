@@ -8,7 +8,7 @@ using NetCoreOnionArchTemplate.Application.Features.Commands.Products.CreateProd
 using NetCoreOnionArchTemplate.Application.Features.Commands.Products.DeleteProduct;
 using NetCoreOnionArchTemplate.Application.Features.Commands.Products.UpdateProduct;
 using NetCoreOnionArchTemplate.Application.Features.Queries.Products.GetAllProduct;
-using NetCoreOnionArchTemplate.Application.Features.Queries.Product.GetProductById;
+using NetCoreOnionArchTemplate.Application.Features.Queries.Products.GetProductById;
 using NetCoreOnionArchTemplate.Application.RequestParameters;
 
 namespace NetCoreOnionArchTemplate.API.Controllers
